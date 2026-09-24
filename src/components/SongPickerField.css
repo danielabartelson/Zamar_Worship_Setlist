@@ -1,0 +1,178 @@
+/* Generic label+control field wrapper, reused across the setlist meta
+   row, the song editor forms, and this picker's own header. */
+.song-picker-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+}
+
+.picker-field-label {
+  font-family: var(--font-bold);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--color-taupe);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+/* --- Full-panel song picker (opened when a setlist slot is tapped) --- */
+
+.song-picker-panel {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.slot-row-active {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 2px;
+  border-bottom: 1px solid var(--color-gold);
+  flex: 0 0 auto;
+}
+
+.slot-back-btn {
+  background: transparent;
+  color: var(--color-gold);
+  border: none;
+  padding: 0 4px;
+  font-size: 1.4rem;
+  line-height: 1;
+  flex: 0 0 auto;
+}
+
+.slot-row-active .slot-label {
+  color: var(--color-gold);
+  flex: 1;
+  text-align: center;
+}
+
+.slot-clear-btn {
+  background: transparent;
+  color: var(--color-taupe);
+  border: none;
+  padding: 0 2px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  flex: 0 0 auto;
+}
+
+.slot-clear-spacer {
+  width: 34px;
+  flex: 0 0 auto;
+}
+
+.song-picker-panel .picker-search-input {
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid var(--color-border);
+  outline: none;
+  width: 100%;
+  height: auto;
+  font-size: 1rem;
+  font-family: var(--font-regular);
+  background: transparent;
+  padding: 10px 2px;
+  flex: 0 0 auto;
+}
+
+.song-picker-panel .picker-search-input:focus {
+  border-bottom-color: var(--color-gold);
+  outline: none;
+}
+
+/* Dropdown list -- fills remaining space, no keyboard shown by default */
+.song-list-panel {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  background: var(--color-surface);
+  overflow: hidden;
+}
+
+.song-list-scroll {
+  height: 100%;
+  overflow-y: auto;
+  padding-right: 26px; /* room for the A-Z index strip */
+  -webkit-overflow-scrolling: touch;
+}
+
+.song-row {
+  padding: 13px 4px;
+  font-size: 0.98rem;
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-border);
+  cursor: pointer;
+}
+
+.song-row-selected {
+  color: var(--color-gold);
+  font-weight: 700;
+}
+
+.song-row-letter {
+  padding: 8px 4px 4px;
+  font-family: var(--font-bold);
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: var(--color-taupe);
+}
+
+.picker-empty {
+  padding: 10px 4px;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+/* A-Z index strip, pinned to the right edge like the Hymns app screenshot */
+.az-index {
+  position: absolute;
+  top: 6px;
+  right: 4px;
+  bottom: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1px;
+  z-index: 5;
+}
+
+.az-index span {
+  font-family: var(--font-bold);
+  font-weight: 700;
+  font-size: 0.64rem;
+  color: var(--color-gold);
+  line-height: 1.5;
+  padding: 0 3px;
+  cursor: pointer;
+}
+
+.az-letter-dim {
+  opacity: 0.35;
+  cursor: default;
+}
+
+/* Magnifying-glass toggle, fixed at bottom -- pulls the keyboard/search up */
+.search-fab {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--color-dark);
+  color: var(--color-cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  box-shadow: 0 4px 14px rgba(47, 56, 42, 0.35);
+  z-index: 6;
+  padding: 0;
+}
