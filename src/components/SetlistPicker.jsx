@@ -14,6 +14,19 @@ const SLOTS = [
   { id: "offering", label: "Offering Song", tempo: "fast" },
 ];
 
+// Formats a "YYYY-MM-DD" value (what <input type="date"> gives us) as
+// "Sep 24, 2026" for display. Built from the raw parts instead of
+// `new Date(dateString)` because that parses as UTC midnight -- in a
+// negative UTC-offset timezone (all of the US) that rolls back to the
+// previous day once converted to local time for display.
+function formatDateDisplay(value) {
+  if (!value) return "";
+  const [year, month, day] = value.split("-").map(Number);
+  if (!year || !month || !day) return value;
+  const d = new Date(year, month - 1, day);
+  return d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+}
+
 export default function SetlistPicker({ songs, onView, onLibrary, onAddSong }) {
   const [choices, setChoices] = useState({});
   const [service, setService] = useState("");
@@ -78,7 +91,22 @@ export default function SetlistPicker({ songs, onView, onLibrary, onAddSong }) {
         </div>
         <div className="song-picker-field">
           <label className="picker-field-label">Date</label>
-          <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
+          {/* The native date input renders its value differently on every
+              browser (and iOS Safari in particular won't let us left-align
+              it), so we show our own plain-text date on top and keep the
+              real <input> beneath it fully transparent -- it still opens
+              the normal native date picker when tapped, we just control
+              what's shown. */}
+          <div className="date-field-wrap">
+            <span className="date-display-text">{formatDateDisplay(date)}</span>
+            <input
+              type="date"
+              className="date-native-input"
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+              aria-label="Date"
+            />
+          </div>
         </div>
       </div>
 

@@ -1,11 +1,34 @@
 import { useState } from "react";
 import SongView from "./SongView";
+import { buildSetlistUrl } from "../lib/setlistCode";
 import "./SetlistViewer.css";
 
 export default function SetlistViewer({ setlist, songsById, onPickAnother }) {
   const slots = (setlist.slots || []).filter((s) => s.songId);
   const [activeIndex, setActiveIndex] = useState(0);
   const [revealed, setRevealed] = useState(false);
+  const [shareStatus, setShareStatus] = useState("");
+
+  async function handleShare() {
+    const url = buildSetlistUrl(setlist);
+    // Native share sheet on phones (Messages, email, etc.) when available;
+    // otherwise fall back to copying the link to the clipboard.
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: setlist.service || "Setlist", url });
+      } catch (e) {
+        /* user canceled the share sheet -- not an error */
+      }
+      return;
+    }
+    try {
+      await navigator.clipboard.writeText(url);
+      setShareStatus("Link copied!");
+    } catch (e) {
+      setShareStatus("Couldn't copy automatically -- long-press to copy the link.");
+    }
+    setTimeout(() => setShareStatus(""), 2500);
+  }
 
   if (slots.length === 0) {
     return (
@@ -69,9 +92,15 @@ export default function SetlistViewer({ setlist, songsById, onPickAnother }) {
         />
       </div>
 
-      <button className="link-btn setlist-footer-link" onClick={onPickAnother}>
-        Build a Different Setlist
-      </button>
+      <div className="setlist-footer">
+        <button className="share-btn" onClick={handleShare}>
+          Share Setlist
+        </button>
+        {shareStatus && <p className="share-status">{shareStatus}</p>}
+        <button className="link-btn setlist-footer-link" onClick={onPickAnother}>
+          Build a Different Setlist
+        </button>
+      </div>
     </div>
   );
 }

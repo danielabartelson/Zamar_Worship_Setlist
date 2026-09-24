@@ -44,8 +44,30 @@
   position: relative;
 }
 
+.setlist-footer {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 12px 14px;
+}
+
+.share-btn {
+  width: 100%;
+  max-width: 320px;
+}
+
+.share-status {
+  color: var(--color-taupe);
+  font-size: 0.82rem;
+  margin: 0;
+  word-break: break-all;
+  text-align: center;
+}
+
 .setlist-footer-link {
   flex: 0 0 auto;
   text-align: center;
-  padding: 8px 12px 0;
+  padding: 4px 12px 0;
 }
