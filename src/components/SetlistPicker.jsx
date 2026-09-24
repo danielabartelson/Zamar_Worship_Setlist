@@ -1,29 +1,27 @@
 import { useMemo, useState } from "react";
 import SongPickerField from "./SongPickerField";
-import { buildSetlistUrl } from "../lib/setlistCode";
 import { recordSetlistUsage } from "../lib/songStats";
-import QRCode from "qrcode";
 import "./SetlistPicker.css";
 
 const SLOTS = [
   { id: "fast1", label: "Fast Song 1", tempo: "fast" },
   { id: "fast2", label: "Fast Song 2", tempo: "fast" },
   { id: "fast3", label: "Fast Song 3", tempo: "fast" },
-  { id: "offering", label: "Offering Song", tempo: "offering" },
   { id: "slow1", label: "Slow Song 1", tempo: "slow" },
   { id: "slow2", label: "Slow Song 2", tempo: "slow" },
+  // Offering pulls from the same pool as the Fast slots -- any fast song
+  // can be used here, there's no separate "offering" song category.
+  { id: "offering", label: "Offering Song", tempo: "fast" },
 ];
 
 export default function SetlistPicker({ songs, onView, onLibrary, onAddSong }) {
   const [choices, setChoices] = useState({});
   const [service, setService] = useState("");
   const [date, setDate] = useState(() => new Date().toISOString().slice(0, 10));
-  const [generated, setGenerated] = useState(null);
-  const [qrDataUrl, setQrDataUrl] = useState(null);
   const [activeSlotId, setActiveSlotId] = useState(null);
 
   const songsByTempo = useMemo(() => {
-    const map = { fast: [], slow: [], offering: [] };
+    const map = { fast: [], slow: [] };
     songs.forEach((s) => {
       if (map[s.tempo]) map[s.tempo].push(s);
     });
@@ -38,39 +36,15 @@ export default function SetlistPicker({ songs, onView, onLibrary, onAddSong }) {
     setChoices((prev) => ({ ...prev, [slotId]: songId || undefined }));
   }
 
-  async function handleGenerate() {
+  function handleGenerate() {
     const setlist = {
       service: service || "Sunday Service",
       date,
       songIds: SLOTS.map((s) => choices[s.id]).filter(Boolean),
       slots: SLOTS.map((s) => ({ id: s.id, label: s.label, songId: choices[s.id] || null })),
     };
-    const url = buildSetlistUrl(setlist);
-    setGenerated({ setlist, url });
     recordSetlistUsage(setlist);
-    try {
-      const dataUrl = await QRCode.toDataURL(url, { margin: 1, width: 220 });
-      setQrDataUrl(dataUrl);
-    } catch (e) {
-      setQrDataUrl(null);
-    }
-  }
-
-  function handleOpen() {
-    if (generated) onView(generated.setlist);
-  }
-
-  async function handleShare() {
-    if (!generated) return;
-    if (navigator.share) {
-      try {
-        await navigator.share({ title: "Zamar Setlist", url: generated.url });
-      } catch (e) {
-        /* user cancelled */
-      }
-    } else if (navigator.clipboard) {
-      await navigator.clipboard.writeText(generated.url);
-    }
+    onView(setlist);
   }
 
   if (activeSlotId) {
@@ -132,23 +106,6 @@ export default function SetlistPicker({ songs, onView, onLibrary, onAddSong }) {
       <button className="picker-generate-btn" disabled={!hasAnySong} onClick={handleGenerate}>
         Generate Setlist
       </button>
-
-      {generated && (
-        <div className="picker-result">
-          <button className="picker-open-btn" onClick={handleOpen}>
-            Open Setlist
-          </button>
-          {qrDataUrl && (
-            <div className="picker-qr">
-              <img src={qrDataUrl} alt="QR code for setlist link" />
-              <p>Scan to open on another device</p>
-            </div>
-          )}
-          <button className="link-btn" onClick={handleShare}>
-            Share Link
-          </button>
-        </div>
-      )}
 
       <div className="footer-actions">
         <button onClick={onLibrary}>Library</button>

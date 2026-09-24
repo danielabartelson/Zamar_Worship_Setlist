@@ -52,7 +52,6 @@ export default function SongLibrary({ songs, onChange, onBack, onEditSong }) {
               >
                 <option value="fast">{TEMPO_LABELS.fast}</option>
                 <option value="slow">{TEMPO_LABELS.slow}</option>
-                <option value="offering">{TEMPO_LABELS.offering}</option>
               </select>
               <input
                 type="text"

@@ -91,7 +91,6 @@ export default function SongEditor({ songs, onChange, onBack }) {
             <select value={tempo} onChange={(e) => setTempo(e.target.value)}>
               <option value="fast">Fast</option>
               <option value="slow">Slow</option>
-              <option value="offering">Offering</option>
             </select>
           </div>
         </div>

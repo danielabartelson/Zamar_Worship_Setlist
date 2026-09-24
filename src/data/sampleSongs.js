@@ -12,6 +12,6 @@
 
 import songsData from "./songs.json";
 
-export const TEMPO_LABELS = { fast: "Fast", slow: "Slow", offering: "Offering" };
+export const TEMPO_LABELS = { fast: "Fast", slow: "Slow" };
 
 export const sampleSongs = songsData;
