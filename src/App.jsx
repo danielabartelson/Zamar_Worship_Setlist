@@ -18,7 +18,12 @@ import "./App.css";
 const SECRET_TAP_COUNT = 5;
 const SECRET_TAP_WINDOW_MS = 2000;
 
-const LOGO_SRC = "/logo.png";
+// Built with the app's configured base path (see vite.config.js) so this
+// resolves correctly whether the app is hosted at a domain root or, like
+// on GitHub Pages, under a /repo-name/ subfolder. A hardcoded "/logo.png"
+// would 404 under a subfolder, silently hiding both the logo AND the
+// secret 5-tap-to-open-stats feature that lives on it.
+const LOGO_SRC = `${import.meta.env.BASE_URL}logo.png`;
 
 function getInitialView() {
   const params = new URLSearchParams(window.location.search);
