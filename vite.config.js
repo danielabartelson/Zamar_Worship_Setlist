@@ -3,6 +3,11 @@ import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
 
 export default defineConfig({
+  // Relative base so the built asset paths (JS/CSS/manifest/service worker)
+  // work no matter what subfolder this ends up hosted under -- required for
+  // GitHub Pages project sites, which serve from
+  // https://<user>.github.io/<repo-name>/ rather than the domain root.
+  base: "./",
   plugins: [
     react(),
     VitePWA({
