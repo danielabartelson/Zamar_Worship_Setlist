@@ -64,17 +64,6 @@ export default function SetlistViewer({ setlist, songsById, onPickAnother }) {
     </div>
   ) : null;
 
-  const bottomOverlay = revealed ? (
-    <div className="nav-overlay">
-      <button onClick={() => goTo(-1)} disabled={activeIndex === 0}>
-        ← Prev
-      </button>
-      <button onClick={() => goTo(1)} disabled={activeIndex === slots.length - 1}>
-        Next →
-      </button>
-    </div>
-  ) : null;
-
   return (
     <div className="setlist-viewer">
       <div className="setlist-meta">
@@ -87,8 +76,9 @@ export default function SetlistViewer({ setlist, songsById, onPickAnother }) {
           song={activeSong}
           revealed={revealed}
           topOverlay={topOverlay}
-          bottomOverlay={bottomOverlay}
           onTapBody={toggleRevealed}
+          onSwipePrev={activeIndex > 0 ? () => goTo(-1) : undefined}
+          onSwipeNext={activeIndex < slots.length - 1 ? () => goTo(1) : undefined}
         />
       </div>
 
@@ -97,9 +87,6 @@ export default function SetlistViewer({ setlist, songsById, onPickAnother }) {
           Share Setlist
         </button>
         {shareStatus && <p className="share-status">{shareStatus}</p>}
-        <button className="link-btn setlist-footer-link" onClick={onPickAnother}>
-          Build a Different Setlist
-        </button>
       </div>
     </div>
   );

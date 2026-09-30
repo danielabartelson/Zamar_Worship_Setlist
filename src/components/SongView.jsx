@@ -1,5 +1,6 @@
 import { useLayoutEffect, useRef, useState } from "react";
 import ChordLine from "./ChordLine";
+import { useSwipeNav } from "../lib/useSwipeNav";
 import "./SongView.css";
 
 // Lyrics/chords try to fill the screen at a large, comfortable size, and
@@ -60,8 +61,16 @@ function useFitToContainer(deps) {
   return { outerRef, innerRef, fit };
 }
 
-export default function SongView({ song, revealed, topOverlay, bottomOverlay, onTapBody }) {
+export default function SongView({ song, revealed, topOverlay, onTapBody, onSwipePrev, onSwipeNext }) {
   const { outerRef, innerRef } = useFitToContainer([song && song.id]);
+  // Swipe left -> next song, swipe right -> previous song (the natural
+  // "flip a page forward/back" direction); a plain tap toggles the
+  // chip overlay, same as before.
+  const swipeHandlers = useSwipeNav({
+    onTap: onTapBody,
+    onSwipeLeft: onSwipeNext,
+    onSwipeRight: onSwipePrev,
+  });
   if (!song) return null;
 
   return (
@@ -71,7 +80,7 @@ export default function SongView({ song, revealed, topOverlay, bottomOverlay, on
         className="song-view-inner"
         ref={innerRef}
         style={revealed ? { paddingTop: 54 } : undefined}
-        onClick={onTapBody}
+        {...swipeHandlers}
       >
         <div className="song-view-header">
           <div className="song-view-title">{song.title}</div>
@@ -82,7 +91,6 @@ export default function SongView({ song, revealed, topOverlay, bottomOverlay, on
           ))}
         </div>
       </div>
-      {bottomOverlay}
     </div>
   );
 }

@@ -27,7 +27,7 @@ function formatDateDisplay(value) {
   return d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
 }
 
-export default function SetlistPicker({ songs, onView, onLibrary, onAddSong }) {
+export default function SetlistPicker({ songs, onView }) {
   const [choices, setChoices] = useState({});
   const [service, setService] = useState("");
   const [date, setDate] = useState(() => new Date().toISOString().slice(0, 10));
@@ -134,11 +134,6 @@ export default function SetlistPicker({ songs, onView, onLibrary, onAddSong }) {
       <button className="picker-generate-btn" disabled={!hasAnySong} onClick={handleGenerate}>
         Generate Setlist
       </button>
-
-      <div className="footer-actions">
-        <button onClick={onLibrary}>Library</button>
-        <button onClick={onAddSong}>Add Song</button>
-      </div>
     </div>
   );
 }

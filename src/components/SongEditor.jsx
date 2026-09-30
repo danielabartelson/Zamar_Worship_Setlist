@@ -2,16 +2,15 @@ import { useMemo, useState } from "react";
 import SongView from "./SongView";
 import { draftFromRawText } from "../lib/twoLineToBracket";
 import { addLocalSong, uniqueId } from "../lib/addedSongs";
-import { getSyncSettings, saveSyncSettings, syncSongsToGitHub } from "../lib/syncSongs";
+import { getSavedPasscode, savePasscode, syncSongsToGitHub } from "../lib/syncSongs";
 import "./SongEditor.css";
 
 export default function SongEditor({ songs, onChange, onBack }) {
   const [title, setTitle] = useState("");
-  const [key, setKey] = useState("");
   const [tempo, setTempo] = useState("fast");
   const [rawText, setRawText] = useState("");
   const [draft, setDraft] = useState("");
-  const [syncSettings, setSyncSettings] = useState(() => getSyncSettings());
+  const [passcode, setPasscode] = useState(() => getSavedPasscode());
   const [syncState, setSyncState] = useState(null); // null | "saving" | "synced" | "error"
   const [syncError, setSyncError] = useState("");
   const [savedId, setSavedId] = useState(null);
@@ -27,11 +26,10 @@ export default function SongEditor({ songs, onChange, onBack }) {
     return {
       id: "preview",
       title: title || "Untitled Song",
-      key,
       tempo,
       lines: lines.length ? lines : [{ text: "" }],
     };
-  }, [draft, rawText, title, key, tempo]);
+  }, [draft, rawText, title, tempo]);
 
   async function handleSave() {
     if (!title.trim()) return;
@@ -39,7 +37,6 @@ export default function SongEditor({ songs, onChange, onBack }) {
     const newSong = {
       id,
       title,
-      key,
       tempo,
       lines: (draft || rawText).split("\n").map((text) => ({ text })),
     };
@@ -49,18 +46,18 @@ export default function SongEditor({ songs, onChange, onBack }) {
     onChange();
     setSavedId(id);
 
-    if (!syncSettings.token.trim() || !syncSettings.repo.trim()) {
+    if (!passcode.trim()) {
       setSyncState("error");
-      setSyncError("Saved on this device. Enter your GitHub token and repo above to also push this live for everyone.");
+      setSyncError("Saved on this device. Enter the publish code above to also push this live for everyone.");
       return;
     }
 
-    saveSyncSettings(syncSettings);
+    savePasscode(passcode);
     setSyncState("saving");
     setSyncError("");
 
     const updatedSongs = [...songs, newSong];
-    const result = await syncSongsToGitHub(updatedSongs, syncSettings, `Add song: ${title}`);
+    const result = await syncSongsToGitHub(updatedSongs, passcode, `Add song: ${title}`);
     if (result.ok) {
       setSyncState("synced");
     } else {
@@ -81,18 +78,12 @@ export default function SongEditor({ songs, onChange, onBack }) {
           <label className="picker-field-label">Title</label>
           <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
         </div>
-        <div className="editor-fields-row">
-          <div className="song-picker-field">
-            <label className="picker-field-label">Key</label>
-            <input type="text" value={key} onChange={(e) => setKey(e.target.value)} />
-          </div>
-          <div className="song-picker-field">
-            <label className="picker-field-label">Tempo</label>
-            <select value={tempo} onChange={(e) => setTempo(e.target.value)}>
-              <option value="fast">Fast</option>
-              <option value="slow">Slow</option>
-            </select>
-          </div>
+        <div className="song-picker-field">
+          <label className="picker-field-label">Tempo</label>
+          <select value={tempo} onChange={(e) => setTempo(e.target.value)}>
+            <option value="fast">Fast</option>
+            <option value="slow">Slow</option>
+          </select>
         </div>
       </div>
 
@@ -126,25 +117,14 @@ export default function SongEditor({ songs, onChange, onBack }) {
         <SongView song={previewSong} />
       </div>
 
-      <div className="editor-fields-row">
-        <div className="song-picker-field">
-          <label className="picker-field-label">GitHub token (to save live for everyone)</label>
-          <input
-            type="password"
-            value={syncSettings.token}
-            onChange={(e) => setSyncSettings((s) => ({ ...s, token: e.target.value }))}
-            placeholder="github_pat_…"
-          />
-        </div>
-        <div className="song-picker-field">
-          <label className="picker-field-label">GitHub repo</label>
-          <input
-            type="text"
-            value={syncSettings.repo}
-            onChange={(e) => setSyncSettings((s) => ({ ...s, repo: e.target.value }))}
-            placeholder="username/reponame"
-          />
-        </div>
+      <div className="song-picker-field">
+        <label className="picker-field-label">Publish code (to save live for everyone)</label>
+        <input
+          type="password"
+          value={passcode}
+          onChange={(e) => setPasscode(e.target.value)}
+          placeholder="Enter the code"
+        />
       </div>
 
       <button className="save-btn" onClick={handleSave} disabled={!title.trim()}>
@@ -153,8 +133,8 @@ export default function SongEditor({ songs, onChange, onBack }) {
 
       {savedId && syncState === "synced" && (
         <p className="sync-status sync-status-ok">
-          Saved and synced — live for everyone in about a minute once the site
-          rebuilds.
+          Saved and published — live for everyone in about a minute once the
+          site rebuilds.
         </p>
       )}
       {savedId && syncState === "error" && <p className="sync-status sync-status-error">{syncError}</p>}

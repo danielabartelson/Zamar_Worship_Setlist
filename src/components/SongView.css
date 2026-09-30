@@ -73,25 +73,30 @@
   line-height: 1.15;
 }
 
-/* Overlay controls, tap-to-reveal -- solid gold, white text, no fade */
+/* Overlay controls, tap-to-reveal -- same look as the song list (cream
+   background, thin gold border, green text) rather than a solid gold
+   band, which read as too heavy/harsh on wider (tablet) screens. Prev/
+   Next arrows are gone -- swiping left/right on the lyrics now does that
+   job (see useSwipeNav). */
 .chip-overlay {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   display: flex;
-  gap: 6px;
+  gap: 8px;
   overflow-x: auto;
   padding: 10px 10px;
-  background: var(--color-gold);
+  background: var(--color-cream);
+  border-bottom: 1px solid var(--color-gold);
   z-index: 10;
 }
 
 .chip {
   flex: 0 0 auto;
-  background: rgba(255, 255, 255, 0.16);
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: var(--color-surface);
+  color: var(--color-dark);
+  border: 1.5px solid var(--color-gold);
   border-radius: 20px;
   padding: 7px 14px;
   font-size: 0.82rem;
@@ -99,32 +104,7 @@
 }
 
 .chip-active {
-  background: #ffffff;
-  color: var(--color-gold);
-  border-color: #ffffff;
-  font-weight: 700;
-}
-
-.nav-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: space-between;
-  padding: 16px 14px;
-  gap: 10px;
   background: var(--color-gold);
-  z-index: 10;
-}
-
-.nav-overlay button {
-  flex: 1;
-  background: rgba(255, 255, 255, 0.18);
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-}
-
-.nav-overlay button:disabled {
-  opacity: 0.45;
+  font-weight: 700;
 }

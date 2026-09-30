@@ -1,8 +1,12 @@
 .song-library {
   max-width: 640px;
   margin: 0 auto;
-  padding: 16px 20px 60px;
+  padding: 16px 20px 8px;
   width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
 }
 
 .library-heading {
@@ -23,10 +27,17 @@
   margin-bottom: 14px;
 }
 
-.library-list {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+/* .song-list-panel / .song-list-scroll / .az-index come from
+   SongPickerField.css (shared global styles) -- they give this list the
+   same scrollable-area-with-a-right-edge-A-Z-strip behavior as the song
+   picker popup. Only the row content below is Library-specific. */
+
+.library-letter {
+  padding: 10px 4px 4px;
+  font-family: var(--font-bold);
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: var(--color-taupe);
 }
 
 .library-row {
@@ -38,6 +49,7 @@
   border: 1.5px solid var(--color-border);
   border-radius: 10px;
   padding: 10px 12px;
+  margin-bottom: 8px;
   flex-wrap: wrap;
 }
 
@@ -49,13 +61,13 @@
 
 .library-row-controls {
   display: flex;
-  gap: 8px;
+  align-items: center;
+  gap: 10px;
   flex: 0 0 auto;
 }
 
-.library-row-controls select,
-.library-key-input {
-  width: 92px !important;
+.library-row-controls select {
+  width: 92px;
   height: 38px;
   font-size: 0.85rem;
   padding: 4px 8px;

@@ -1,109 +1,63 @@
-// Commits an updated songs.json straight to GitHub from the browser --
-// no backend/serverless function involved. GitHub's REST API supports
-// authenticated cross-origin requests, so the app can call it directly.
-// That commit is what makes an edit "live for everyone": it's what
-// triggers the GitHub Actions workflow to rebuild and redeploy the app to
-// GitHub Pages.
+// Publishing a song edit "for everyone" goes through a small private
+// Cloudflare Worker (see cloudflare-worker/worship-sync-worker.js)
+// instead of calling GitHub directly from the browser. The app only ever
+// sends the plain passcode and the updated song list to that worker; the
+// real GitHub token that can actually publish changes lives only on
+// Cloudflare's servers, never inside this app, so it can't be dug out of
+// the page by anyone visiting the site.
 //
-// The GitHub token and repo name are entered once on whichever phone/
-// device should be able to publish changes, and are remembered only on
-// that device (localStorage) -- they're never included in the setlist
-// links you share with the band, and never leave this device except in
-// the direct call to GitHub's own API.
+// The passcode itself is just remembered on this device (localStorage)
+// as a convenience so it doesn't need retyping every time.
 
-const SETTINGS_KEY = "arw-worship-github-sync";
-const GITHUB_API = "https://api.github.com";
-const FILE_PATH = "src/data/songs.json";
-const BRANCH = "main";
+import { SYNC_WORKER_URL } from "../syncConfig";
 
-export function getSyncSettings() {
+const PASSCODE_KEY = "arw-worship-passcode";
+
+export function getSavedPasscode() {
   try {
-    const raw = localStorage.getItem(SETTINGS_KEY);
-    return raw ? JSON.parse(raw) : { token: "", repo: "" };
+    return localStorage.getItem(PASSCODE_KEY) || "";
   } catch (e) {
-    return { token: "", repo: "" };
+    return "";
   }
 }
 
-export function saveSyncSettings(settings) {
+export function savePasscode(code) {
   try {
-    localStorage.setItem(SETTINGS_KEY, JSON.stringify(settings));
+    localStorage.setItem(PASSCODE_KEY, code);
   } catch (e) {
     /* ignore storage errors */
   }
 }
 
-function utf8ToBase64(str) {
-  return btoa(unescape(encodeURIComponent(str)));
-}
-
-// Pulls a plain human-readable message out of a GitHub API error response
-// instead of showing raw JSON to the user.
-async function githubErrorMessage(res) {
-  try {
-    const data = await res.json();
-    if (data && data.message) return data.message;
-  } catch (e) {
-    /* not JSON, fall through */
+export async function syncSongsToGitHub(songs, passcode, message) {
+  const code = (passcode || "").trim();
+  if (!code) {
+    return { ok: false, error: "Enter the publish code above to also push this live for everyone." };
   }
-  return `status ${res.status}`;
-}
-
-export async function syncSongsToGitHub(songs, settings, message) {
-  const token = (settings && settings.token || "").trim();
-  const repo = (settings && settings.repo || "").trim();
-
-  if (!token || !repo) {
-    return { ok: false, error: "Enter your GitHub token and repo (username/reponame) above first." };
+  if (!SYNC_WORKER_URL) {
+    return {
+      ok: false,
+      error: "Saved on this device. The publish service hasn't been set up yet, so it can't go live for everyone just yet.",
+    };
   }
 
-  const headers = {
-    Authorization: `Bearer ${token}`,
-    Accept: "application/vnd.github+json",
-  };
-
   try {
-    const getRes = await fetch(
-      `${GITHUB_API}/repos/${repo}/contents/${FILE_PATH}?ref=${encodeURIComponent(BRANCH)}`,
-      { headers }
-    );
-    if (!getRes.ok) {
-      const detail = await githubErrorMessage(getRes);
-      const hint =
-        getRes.status === 404
-          ? " Double check the repo name (username/reponame) and that the file exists in it."
-          : getRes.status === 401
-          ? " Double check the token was copied correctly and hasn't expired."
-          : "";
-      return {
-        ok: false,
-        error: `GitHub said: "${detail}".${hint}`,
-      };
-    }
-    const current = await getRes.json();
-
-    const newContent = JSON.stringify(songs, null, 2) + "\n";
-    const putRes = await fetch(`${GITHUB_API}/repos/${repo}/contents/${FILE_PATH}`, {
-      method: "PUT",
-      headers: { ...headers, "Content-Type": "application/json" },
-      body: JSON.stringify({
-        message: message || "Update song library from Zamar Setlist app",
-        content: utf8ToBase64(newContent),
-        sha: current.sha,
-        branch: BRANCH,
-      }),
+    const res = await fetch(SYNC_WORKER_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ passcode: code, songs, message }),
     });
+    const data = await res.json().catch(() => ({}));
 
-    if (!putRes.ok) {
-      const detail = await githubErrorMessage(putRes);
-      return {
-        ok: false,
-        error: `GitHub said: "${detail}". Try Save again in a moment.`,
-      };
+    if (!res.ok) {
+      if (res.status === 403) {
+        return { ok: false, error: "That code doesn't match -- double check it and try again." };
+      }
+      return { ok: false, error: data.error || `Something went wrong (status ${res.status}).` };
     }
 
     return { ok: true };
   } catch (e) {
-    return { ok: false, error: `Couldn't reach GitHub: ${e.message}` };
+    return { ok: false, error: `Couldn't reach the publish service: ${e.message}` };
   }
 }

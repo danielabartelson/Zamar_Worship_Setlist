@@ -5,6 +5,7 @@ import SongEditor from "./components/SongEditor";
 import SongLibrary from "./components/SongLibrary";
 import EditSong from "./components/EditSong";
 import SongUsageStats from "./components/SongUsageStats";
+import BottomNav from "./components/BottomNav";
 import { sampleSongs } from "./data/sampleSongs";
 import { decodeSetlist, getRememberedSetlist, rememberSetlist } from "./lib/setlistCode";
 import { applyOverrides } from "./lib/songOverrides";
@@ -24,6 +25,18 @@ const SECRET_TAP_WINDOW_MS = 2000;
 // would 404 under a subfolder, silently hiding both the logo AND the
 // secret 5-tap-to-open-stats feature that lives on it.
 const LOGO_SRC = `${import.meta.env.BASE_URL}logo.png`;
+
+function emptySetlist() {
+  return { service: "", date: new Date().toISOString().slice(0, 10), songIds: [], slots: [] };
+}
+
+// Which bottom-nav tab is "on" for a given screen -- edit-song counts as
+// part of the Library flow since that's the only way to reach it.
+function navActiveFor(mode) {
+  if (mode === "edit-song") return "library";
+  if (mode === "view") return "current";
+  return mode;
+}
 
 function getInitialView() {
   const params = new URLSearchParams(window.location.search);
@@ -73,6 +86,15 @@ export default function App() {
 
   const showHeader = view.mode !== "view";
 
+  function handleNavigate(tabId) {
+    if (tabId === "current") {
+      const remembered = getRememberedSetlist();
+      setView({ mode: "view", setlist: remembered || emptySetlist(), fromLink: false });
+      return;
+    }
+    setView({ mode: tabId });
+  }
+
   return (
     <div className="app-shell">
       {showHeader && (
@@ -87,13 +109,6 @@ export default function App() {
             />
           )}
           <span className="brand-title">Zamar Setlist</span>
-          <div className="header-actions">
-            {view.mode !== "picker" && (
-              <button className="header-picker-link" onClick={() => setView({ mode: "picker" })}>
-                Setlist Builder
-              </button>
-            )}
-          </div>
         </header>
       )}
 
@@ -102,8 +117,6 @@ export default function App() {
           <SetlistPicker
             songs={songs}
             onView={(setlist) => setView({ mode: "view", setlist, fromLink: false })}
-            onLibrary={() => setView({ mode: "library" })}
-            onAddSong={() => setView({ mode: "editor" })}
           />
         )}
         {view.mode === "view" && (
@@ -140,6 +153,8 @@ export default function App() {
           <SongUsageStats songs={songs} onBack={() => setView({ mode: "picker" })} />
         )}
       </main>
+
+      <BottomNav active={navActiveFor(view.mode)} onNavigate={handleNavigate} />
     </div>
   );
 }
