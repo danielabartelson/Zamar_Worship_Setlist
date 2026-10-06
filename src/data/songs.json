@@ -435,7 +435,7 @@
     "id": "at-the-cross",
     "title": "At the Cross",
     "key": "F",
-    "tempo": "slow",
+    "tempo": "fast",
     "lines": [
       {
         "text": "[F]At the cross, at the cross where I first saw the [C]light"
@@ -584,7 +584,7 @@
     "id": "awesome",
     "title": "Awesome",
     "key": "E",
-    "tempo": "fast",
+    "tempo": "slow",
     "lines": [
       {
         "text": "[E]My God is awesome, He can move mountains, [B]"
@@ -4543,7 +4543,7 @@
     "id": "be-exalted",
     "title": "Be Exalted",
     "key": "Bb",
-    "tempo": "fast",
+    "tempo": "slow",
     "lines": [
       {
         "text": "[Bb]I will [Eb]give thanks to [Bb]Thee, Oh [Bb]Lord [Eb]among the [Bb]people."
