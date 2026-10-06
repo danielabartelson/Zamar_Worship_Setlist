@@ -5871,7 +5871,7 @@
     "id": "i-know-a-name",
     "title": "I Know A Name",
     "key": "G",
-    "tempo": "fast",
+    "tempo": "slow",
     "lines": [
       {
         "text": "[G] [F/A] [C]"
