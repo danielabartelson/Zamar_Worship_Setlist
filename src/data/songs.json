@@ -905,7 +905,7 @@
     "id": "fear-not",
     "title": "Fear Not",
     "key": "Gm",
-    "tempo": "slow",
+    "tempo": "fast",
     "lines": [
       {
         "text": "[Gm]Fear not; For I am with you"
@@ -4240,7 +4240,7 @@
     "id": "woke-up-this-morning",
     "title": "Woke Up This Morning",
     "key": "G",
-    "tempo": "fast",
+    "tempo": "slow",
     "lines": [
       {
         "text": "[G]Woke up this morning with my mind....stayed on Jesus"
