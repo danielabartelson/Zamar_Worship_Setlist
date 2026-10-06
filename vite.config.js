@@ -12,19 +12,19 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: "autoUpdate",
-      includeAssets: ["logo.png", "icon-192.png", "icon-512.png"],
+      includeAssets: ["logo.png", "icon-192.png", "icon-512.png", "icon-maskable-512.png", "apple-touch-icon.png"],
       manifest: {
         name: "Zamar Setlist",
         short_name: "Zamar Setlist",
         description: "Worship setlist picker and viewer for The Potter's House Ogden",
         start_url: ".",
         display: "standalone",
-        background_color: "#e7e6de",
+        background_color: "#30382b",
         theme_color: "#2f382a",
         icons: [
           { src: "icon-192.png", sizes: "192x192", type: "image/png" },
           { src: "icon-512.png", sizes: "512x512", type: "image/png" },
-          { src: "icon-512.png", sizes: "512x512", type: "image/png", purpose: "maskable" },
+          { src: "icon-maskable-512.png", sizes: "512x512", type: "image/png", purpose: "maskable" },
         ],
       },
     }),

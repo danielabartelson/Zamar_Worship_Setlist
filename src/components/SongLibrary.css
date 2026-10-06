@@ -43,24 +43,32 @@
    picker popup. Only the row content below is Library-specific. */
 
 .library-letter {
-  padding: 10px 4px 4px;
+  padding: 10px 4px 4px 20px;
   font-family: var(--font-bold);
   font-weight: 700;
   font-size: 0.75rem;
   color: var(--color-taupe);
 }
 
+/* Plain rows separated by a tan line inset to start under the first
+   letter of the title -- same look as the song picker pages. */
 .library-row {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-  background: var(--color-surface);
-  border: 1.5px solid var(--color-border);
-  border-radius: 10px;
-  padding: 10px 12px;
-  margin-bottom: 8px;
+  padding: 8px 4px 8px 20px;
   flex-wrap: wrap;
+}
+
+.library-row::after {
+  content: "";
+  position: absolute;
+  left: 20px;
+  right: 4px;
+  bottom: 0;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .library-row-title {
