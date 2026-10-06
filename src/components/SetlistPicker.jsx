@@ -1,37 +1,26 @@
 import { useMemo, useState } from "react";
 import SongPickerField from "./SongPickerField";
-import { recordSetlistUsage } from "../lib/songStats";
+import { SLOTS } from "../lib/slots";
 import "./SetlistPicker.css";
 
-const SLOTS = [
-  { id: "fast1", label: "Fast Song 1", tempo: "fast" },
-  { id: "fast2", label: "Fast Song 2", tempo: "fast" },
-  { id: "fast3", label: "Fast Song 3", tempo: "fast" },
-  { id: "slow1", label: "Slow Song 1", tempo: "slow" },
-  { id: "slow2", label: "Slow Song 2", tempo: "slow" },
-  // Offering pulls from the same pool as the Fast slots -- any fast song
-  // can be used here, there's no separate "offering" song category.
-  { id: "offering", label: "Offering Song", tempo: "fast" },
-];
-
-// Formats a "YYYY-MM-DD" value (what <input type="date"> gives us) as
-// "Sep 24, 2026" for display. Built from the raw parts instead of
-// `new Date(dateString)` because that parses as UTC midnight -- in a
-// negative UTC-offset timezone (all of the US) that rolls back to the
-// previous day once converted to local time for display.
+// Formats "YYYY-MM-DD" as "Sep 24, 2026" from its raw parts (new
+// Date("YYYY-MM-DD") parses as UTC and can roll back a day in the US).
 function formatDateDisplay(value) {
   if (!value) return "";
   const [year, month, day] = value.split("-").map(Number);
   if (!year || !month || !day) return value;
-  const d = new Date(year, month - 1, day);
-  return d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+  return new Date(year, month - 1, day).toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
 }
 
-export default function SetlistPicker({ songs, onView }) {
-  const [choices, setChoices] = useState({});
-  const [service, setService] = useState("");
-  const [date, setDate] = useState(() => new Date().toISOString().slice(0, 10));
+// The builder is fully controlled by `draft` (kept in App and saved on the
+// device), so nothing is lost when you leave this page and come back.
+export default function SetlistPicker({ songs, draft, onDraftChange, onGenerate, onClear }) {
   const [activeSlotId, setActiveSlotId] = useState(null);
+  const { choices, service, date } = draft;
 
   const songsByTempo = useMemo(() => {
     const map = { fast: [], slow: [] };
@@ -42,22 +31,10 @@ export default function SetlistPicker({ songs, onView }) {
     return map;
   }, [songs]);
 
-  const allChosenIds = Object.values(choices).filter(Boolean);
-  const hasAnySong = allChosenIds.length > 0;
+  const hasAnySong = SLOTS.some((s) => choices[s.id]);
 
   function handleChange(slotId, songId) {
-    setChoices((prev) => ({ ...prev, [slotId]: songId || undefined }));
-  }
-
-  function handleGenerate() {
-    const setlist = {
-      service: service || "Sunday Service",
-      date,
-      songIds: SLOTS.map((s) => choices[s.id]).filter(Boolean),
-      slots: SLOTS.map((s) => ({ id: s.id, label: s.label, songId: choices[s.id] || null })),
-    };
-    recordSetlistUsage(setlist);
-    onView(setlist);
+    onDraftChange({ choices: { ...choices, [slotId]: songId || undefined } });
   }
 
   if (activeSlotId) {
@@ -86,24 +63,21 @@ export default function SetlistPicker({ songs, onView }) {
             type="text"
             placeholder="Sunday Service"
             value={service}
-            onChange={(e) => setService(e.target.value)}
+            onChange={(e) => onDraftChange({ service: e.target.value })}
           />
         </div>
-        <div className="song-picker-field">
+        <div className="song-picker-field picker-date-field">
           <label className="picker-field-label">Date</label>
-          {/* The native date input renders its value differently on every
-              browser (and iOS Safari in particular won't let us left-align
-              it), so we show our own plain-text date on top and keep the
-              real <input> beneath it fully transparent -- it still opens
-              the normal native date picker when tapped, we just control
-              what's shown. */}
+          {/* Our own plain-text date on top (so it can be right-aligned the
+              same on every device); the real date input sits invisibly
+              beneath it and still opens the native date picker when tapped. */}
           <div className="date-field-wrap">
             <span className="date-display-text">{formatDateDisplay(date)}</span>
             <input
               type="date"
               className="date-native-input"
               value={date}
-              onChange={(e) => setDate(e.target.value)}
+              onChange={(e) => onDraftChange({ date: e.target.value })}
               aria-label="Date"
             />
           </div>
@@ -131,9 +105,15 @@ export default function SetlistPicker({ songs, onView }) {
         </p>
       )}
 
-      <button className="picker-generate-btn" disabled={!hasAnySong} onClick={handleGenerate}>
+      <button className="picker-generate-btn" disabled={!hasAnySong} onClick={onGenerate}>
         Generate Setlist
       </button>
+
+      {hasAnySong && (
+        <button className="link-btn picker-clear-btn" onClick={onClear}>
+          Start a new, empty setlist
+        </button>
+      )}
     </div>
   );
 }

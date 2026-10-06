@@ -1,10 +1,7 @@
-// Tracks how often each song gets used in a generated setlist, so the
-// worship leader can spot overplayed songs and ones that haven't come up
-// in a while. Stored only in this browser's localStorage -- there's no
-// backend, so counts only reflect setlists built on this device. If
-// setlists are always built from the same phone/computer, that's a
-// complete picture; if they're built from more than one device, each
-// device keeps its own separate tally.
+// Every time a setlist is generated, one usage event per song is saved
+// (this device only -- there's no backend). The History page is built
+// entirely from these events: the list of setlists, the monthly/yearly
+// totals, and the per-song counts.
 
 const KEY = "arw-worship-song-usage";
 
@@ -25,73 +22,97 @@ function saveUsageEvents(events) {
   }
 }
 
-// Records one usage event per song in the setlist, tagged with the
-// setlist's service date (falls back to today if missing/invalid).
-export function recordSetlistUsage(setlist) {
-  const songIds = (setlist.slots || [])
-    .map((s) => s.songId)
-    .filter(Boolean);
-  if (songIds.length === 0) return;
+// Saves the setlist into history. If it's the same setlist being
+// regenerated after an edit, pass the ts returned last time and the old
+// record is replaced instead of double-counted. Returns the new ts.
+export function recordSetlistUsage(setlist, replaceTs) {
+  let events = getUsageEvents();
+  if (replaceTs) events = events.filter((e) => e.ts !== replaceTs);
+
+  const slots = (setlist.slots || []).filter((s) => s.songId);
+  if (slots.length === 0) {
+    saveUsageEvents(events);
+    return null;
+  }
 
   let date = setlist.date;
   if (!date || Number.isNaN(new Date(date).getTime())) {
     date = new Date().toISOString().slice(0, 10);
   }
 
-  const events = getUsageEvents();
   const ts = Date.now();
-  songIds.forEach((songId) => {
-    events.push({ songId, date, ts });
+  slots.forEach((s) => {
+    events.push({ songId: s.songId, date, ts, service: setlist.service || "", slot: s.id });
   });
   saveUsageEvents(events);
+  return ts;
 }
 
-// Aggregates usage events into per-song stats: total plays, plays this
-// calendar year, plays this calendar month, and the most recent date
-// played. Songs with zero plays are included too (count 0), so songs
-// that have never been picked are easy to spot.
-export function getSongUsageStats(songs) {
-  const events = getUsageEvents();
-  const now = new Date();
-  const thisYear = now.getFullYear();
-  const thisMonthKey = `${thisYear}-${String(now.getMonth() + 1).padStart(2, "0")}`;
+// One entry per generated setlist, newest first.
+export function getSetlistHistory() {
+  const groups = new Map();
+  getUsageEvents().forEach((ev) => {
+    if (!groups.has(ev.ts)) {
+      groups.set(ev.ts, { ts: ev.ts, date: ev.date, service: ev.service || "", songIds: [] });
+    }
+    groups.get(ev.ts).songIds.push(ev.songId);
+  });
+  return [...groups.values()].sort((a, b) => b.date.localeCompare(a.date) || b.ts - a.ts);
+}
 
+export function monthLabel(key) {
+  const [y, m] = key.split("-").map(Number);
+  return new Date(y, m - 1, 1).toLocaleDateString("en-US", { month: "long", year: "numeric" });
+}
+
+// Years -> months -> setlists, each level with setlist and song totals.
+export function buildHistoryTree(history) {
+  const years = new Map();
+  history.forEach((sl) => {
+    const year = sl.date.slice(0, 4);
+    const monthKey = sl.date.slice(0, 7);
+    if (!years.has(year)) years.set(year, { year, setlists: 0, songs: 0, months: new Map() });
+    const y = years.get(year);
+    if (!y.months.has(monthKey)) {
+      y.months.set(monthKey, { key: monthKey, label: monthLabel(monthKey), setlists: [], songs: 0 });
+    }
+    const m = y.months.get(monthKey);
+    m.setlists.push(sl);
+    m.songs += sl.songIds.length;
+    y.setlists += 1;
+    y.songs += sl.songIds.length;
+  });
+  return [...years.values()]
+    .sort((a, b) => b.year.localeCompare(a.year))
+    .map((y) => ({ ...y, months: [...y.months.values()].sort((a, b) => b.key.localeCompare(a.key)) }));
+}
+
+// Choices for the stats period picker: every month that has setlists, a
+// full-year total after each year's months, and all time.
+export function getPeriodOptions(tree) {
+  const opts = [];
+  tree.forEach((y) => {
+    y.months.forEach((m) => opts.push({ value: "month:" + m.key, label: m.label }));
+    opts.push({ value: "year:" + y.year, label: `${y.year} — full year` });
+  });
+  opts.push({ value: "all", label: "All time" });
+  return opts;
+}
+
+// Per-song play counts for one period (a month, a year, or all time),
+// plus each song's all-time last-played date. Songs never played in the
+// period are included with 0 so gaps are easy to spot.
+export function getSongStatsForPeriod(songs, period) {
+  const prefix = period === "all" ? "" : period.split(":")[1];
   const bySong = {};
   songs.forEach((s) => {
-    bySong[s.id] = {
-      songId: s.id,
-      title: s.title,
-      total: 0,
-      thisYear: 0,
-      thisMonth: 0,
-      lastPlayed: null,
-    };
+    bySong[s.id] = { songId: s.id, title: s.title, count: 0, lastPlayed: null };
   });
-
-  events.forEach((ev) => {
+  getUsageEvents().forEach((ev) => {
     const entry = bySong[ev.songId];
-    if (!entry) return; // song may have been removed/renamed since
-    entry.total += 1;
-    const evDate = new Date(ev.date);
-    if (!Number.isNaN(evDate.getTime())) {
-      if (evDate.getFullYear() === thisYear) entry.thisYear += 1;
-      const evMonthKey = `${evDate.getFullYear()}-${String(evDate.getMonth() + 1).padStart(2, "0")}`;
-      if (evMonthKey === thisMonthKey) entry.thisMonth += 1;
-      if (!entry.lastPlayed || ev.date > entry.lastPlayed) entry.lastPlayed = ev.date;
-    }
+    if (!entry) return;
+    if (ev.date.startsWith(prefix)) entry.count += 1;
+    if (!entry.lastPlayed || ev.date > entry.lastPlayed) entry.lastPlayed = ev.date;
   });
-
   return Object.values(bySong);
-}
-
-export function getUsageSummary() {
-  const events = getUsageEvents();
-  if (events.length === 0) return { totalEvents: 0, earliestDate: null, setlistCount: 0 };
-  const dates = events.map((e) => e.date).filter(Boolean).sort();
-  const setlistTimestamps = new Set(events.map((e) => `${e.date}|${e.ts}`.split("|")[1]));
-  return {
-    totalEvents: events.length,
-    earliestDate: dates[0] || null,
-    setlistCount: setlistTimestamps.size,
-  };
 }

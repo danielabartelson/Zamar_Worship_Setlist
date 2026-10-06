@@ -1,8 +1,7 @@
 import "./BottomNav.css";
 
-// Small inline line-icons (stroke = currentColor) so each tab can be
-// colored purely through CSS depending on active/inactive state --
-// matches the minimal gold/green look used elsewhere in the app.
+// Small inline line-icons (stroke = currentColor) so each tab is colored
+// purely through CSS depending on active/inactive state.
 const ICONS = {
   setlist: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
@@ -18,10 +17,11 @@ const ICONS = {
       <path d="M20 5.5c0-.8-.7-1.5-1.5-1.5H13v16h5.5a1.5 1.5 0 0 0 1.5-1.5v-13Z" />
     </svg>
   ),
-  add: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
-      <circle cx="12" cy="12" r="9" />
-      <path d="M12 8v8M8 12h8" />
+  history: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3.5 12a8.5 8.5 0 1 0 2.6-6.1" />
+      <path d="M3 4.5v4h4" />
+      <path d="M12 7.5V12l3 2" />
     </svg>
   ),
   current: (
@@ -35,7 +35,7 @@ const ICONS = {
 const TABS = [
   { id: "picker", label: "Setlist", icon: "setlist" },
   { id: "library", label: "Library", icon: "library" },
-  { id: "editor", label: "Add Song", icon: "add" },
+  { id: "history", label: "History", icon: "history" },
   { id: "current", label: "Current", icon: "current" },
 ];
 

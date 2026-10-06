@@ -1,54 +1,57 @@
-import { useEffect, useMemo, useRef, useState, useCallback } from "react";
+import { useMemo, useState, useCallback } from "react";
 import SetlistPicker from "./components/SetlistPicker";
 import SetlistViewer from "./components/SetlistViewer";
 import SongEditor from "./components/SongEditor";
 import SongLibrary from "./components/SongLibrary";
 import EditSong from "./components/EditSong";
-import SongUsageStats from "./components/SongUsageStats";
+import History from "./components/History";
 import BottomNav from "./components/BottomNav";
 import { sampleSongs } from "./data/sampleSongs";
 import { decodeSetlist, getRememberedSetlist, rememberSetlist } from "./lib/setlistCode";
 import { applyOverrides } from "./lib/songOverrides";
 import { getAddedSongs } from "./lib/addedSongs";
+import { pruneLocalSongs } from "./lib/pruneLocal";
+import { recordSetlistUsage } from "./lib/songStats";
+import {
+  emptyDraft,
+  loadDraft,
+  saveDraft,
+  draftToSetlist,
+  getCurrentSource,
+  setCurrentSource,
+} from "./lib/draft";
 import "./theme.css";
 import "./App.css";
 
-// Tap the logo 5 times within 2 seconds to open the private Song Stats
-// screen -- not linked anywhere in the normal UI, so people you share the
-// app with won't stumble onto it.
-const SECRET_TAP_COUNT = 5;
-const SECRET_TAP_WINDOW_MS = 2000;
-
-// Built with the app's configured base path (see vite.config.js) so this
-// resolves correctly whether the app is hosted at a domain root or, like
-// on GitHub Pages, under a /repo-name/ subfolder. A hardcoded "/logo.png"
-// would 404 under a subfolder, silently hiding both the logo AND the
-// secret 5-tap-to-open-stats feature that lives on it.
+// Built with the app's configured base path (see vite.config.js) so the
+// logo resolves correctly under a GitHub Pages /repo-name/ subfolder.
 const LOGO_SRC = `${import.meta.env.BASE_URL}logo.png`;
 
-function emptySetlist() {
-  return { service: "", date: new Date().toISOString().slice(0, 10), songIds: [], slots: [] };
+// A setlist someone shared as a link (?set=...). It becomes the Current
+// setlist on this device, separate from whatever is being built here.
+function getInitialLinkSetlist() {
+  const code = new URLSearchParams(window.location.search).get("set");
+  if (code) {
+    const decoded = decodeSetlist(code);
+    if (decoded) {
+      rememberSetlist(decoded);
+      setCurrentSource("link");
+      return decoded;
+    }
+  }
+  return getRememberedSetlist();
 }
 
-// Which bottom-nav tab is "on" for a given screen -- edit-song counts as
-// part of the Library flow since that's the only way to reach it.
+// Which bottom-nav tab is lit for a given screen. Add Song and Edit Song
+// are reached from the Library, so they count as Library.
 function navActiveFor(mode) {
-  if (mode === "edit-song") return "library";
+  if (mode === "edit-song" || mode === "editor") return "library";
   if (mode === "view") return "current";
   return mode;
 }
 
-function getInitialView() {
-  const params = new URLSearchParams(window.location.search);
-  const code = params.get("set");
-  if (code) {
-    const decoded = decodeSetlist(code);
-    if (decoded) return { mode: "view", setlist: decoded, fromLink: true };
-  }
-  const remembered = getRememberedSetlist();
-  if (remembered) return { mode: "view", setlist: remembered, fromLink: false };
-  return { mode: "picker" };
-}
+// Drop this device's saved copies of anything already published.
+pruneLocalSongs(sampleSongs);
 
 export default function App() {
   const [songs, setSongs] = useState(() => [
@@ -64,50 +67,53 @@ export default function App() {
     return map;
   }, [songs]);
 
-  const [view, setView] = useState(getInitialView);
-  const [logoOk, setLogoOk] = useState(true);
-  const tapTimes = useRef([]);
+  const [draft, setDraft] = useState(loadDraft);
+  const [linkSetlist] = useState(getInitialLinkSetlist);
+  const [source, setSource] = useState(getCurrentSource);
 
-  useEffect(() => {
-    if (view.mode === "view" && view.fromLink) {
-      rememberSetlist(view.setlist);
-    }
-  }, [view]);
+  function updateDraft(patch) {
+    setDraft((prev) => {
+      const next = { ...prev, ...patch };
+      saveDraft(next);
+      return next;
+    });
+    setSource("draft");
+    setCurrentSource("draft");
+  }
 
-  function handleLogoTap() {
-    const now = Date.now();
-    tapTimes.current = tapTimes.current.filter((t) => now - t < SECRET_TAP_WINDOW_MS);
-    tapTimes.current.push(now);
-    if (tapTimes.current.length >= SECRET_TAP_COUNT) {
-      tapTimes.current = [];
-      setView({ mode: "stats" });
-    }
+  function handleClearDraft() {
+    const fresh = emptyDraft();
+    saveDraft(fresh);
+    setDraft(fresh);
+  }
+
+  const showingLink = source === "link" && linkSetlist;
+  const currentSetlist = useMemo(
+    () => (showingLink ? linkSetlist : draftToSetlist(draft)),
+    [showingLink, linkSetlist, draft]
+  );
+  const hasCurrentSongs = (currentSetlist.slots || []).some((s) => s.songId);
+
+  const [view, setView] = useState(() => ({ mode: hasCurrentSongs ? "view" : "picker" }));
+
+  function handleGenerate() {
+    const setlist = draftToSetlist(draft);
+    const ts = recordSetlistUsage(setlist, draft.historyTs);
+    updateDraft({ historyTs: ts });
+    setView({ mode: "view" });
+  }
+
+  function handleNavigate(tabId) {
+    setView({ mode: tabId === "current" ? "view" : tabId });
   }
 
   const showHeader = view.mode !== "view";
-
-  function handleNavigate(tabId) {
-    if (tabId === "current") {
-      const remembered = getRememberedSetlist();
-      setView({ mode: "view", setlist: remembered || emptySetlist(), fromLink: false });
-      return;
-    }
-    setView({ mode: tabId });
-  }
 
   return (
     <div className="app-shell">
       {showHeader && (
         <header className="brand-header">
-          {logoOk && (
-            <img
-              src={LOGO_SRC}
-              className="logo"
-              alt="Ogden Potter's House logo"
-              onError={() => setLogoOk(false)}
-              onClick={handleLogoTap}
-            />
-          )}
+          <img src={LOGO_SRC} className="logo" alt="Ogden Potter's House logo" />
           <span className="brand-title">Zamar Setlist</span>
         </header>
       )}
@@ -116,29 +122,34 @@ export default function App() {
         {view.mode === "picker" && (
           <SetlistPicker
             songs={songs}
-            onView={(setlist) => setView({ mode: "view", setlist, fromLink: false })}
+            draft={draft}
+            onDraftChange={updateDraft}
+            onGenerate={handleGenerate}
+            onClear={handleClearDraft}
           />
         )}
         {view.mode === "view" && (
           <SetlistViewer
-            setlist={view.setlist}
+            setlist={currentSetlist}
             songsById={songsById}
-            onPickAnother={() => setView({ mode: "picker" })}
+            onEdit={showingLink ? undefined : () => setView({ mode: "picker" })}
+            onBuild={() => setView({ mode: "picker" })}
+          />
+        )}
+        {view.mode === "history" && <History songs={songs} />}
+        {view.mode === "library" && (
+          <SongLibrary
+            songs={songs}
+            onChange={refreshSongs}
+            onAddSong={() => setView({ mode: "editor" })}
+            onEditSong={(songId) => setView({ mode: "edit-song", songId })}
           />
         )}
         {view.mode === "editor" && (
           <SongEditor
             songs={songs}
             onChange={refreshSongs}
-            onBack={() => setView({ mode: "picker" })}
-          />
-        )}
-        {view.mode === "library" && (
-          <SongLibrary
-            songs={songs}
-            onChange={refreshSongs}
-            onBack={() => setView({ mode: "picker" })}
-            onEditSong={(songId) => setView({ mode: "edit-song", songId })}
+            onBack={() => setView({ mode: "library" })}
           />
         )}
         {view.mode === "edit-song" && songsById[view.songId] && (
@@ -148,9 +159,6 @@ export default function App() {
             onChange={refreshSongs}
             onBack={() => setView({ mode: "library" })}
           />
-        )}
-        {view.mode === "stats" && (
-          <SongUsageStats songs={songs} onBack={() => setView({ mode: "picker" })} />
         )}
       </main>
 

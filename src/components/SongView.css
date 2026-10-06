@@ -77,7 +77,7 @@
    background, thin gold border, green text) rather than a solid gold
    band, which read as too heavy/harsh on wider (tablet) screens. Prev/
    Next arrows are gone -- swiping left/right on the lyrics now does that
-   job (see useSwipeNav). */
+   job (the pager in SetlistViewer). */
 .chip-overlay {
   position: absolute;
   top: 0;

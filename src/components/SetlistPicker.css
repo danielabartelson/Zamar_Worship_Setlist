@@ -53,8 +53,24 @@
 /* Date field: a plain-text display sits on top (always left-aligned, same
    look everywhere), and the real date input sits beneath it, invisible but
    still tappable, so it still opens each platform's native date picker. */
+.picker-date-field {
+  align-items: flex-end;
+}
+
+.picker-date-field .picker-field-label {
+  align-self: flex-end;
+}
+
 .date-field-wrap {
   position: relative;
+  align-self: stretch;
+}
+
+.picker-clear-btn {
+  align-self: center;
+  margin-top: 10px;
+  color: var(--color-taupe);
+  font-size: 0.85rem;
 }
 
 .date-display-text {
@@ -63,6 +79,7 @@
   font-size: 0.98rem;
   color: var(--color-text);
   white-space: nowrap;
+  text-align: right;
   pointer-events: none;
 }
 

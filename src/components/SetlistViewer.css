@@ -19,6 +19,7 @@
 
 .setlist-meta {
   flex: 0 0 auto;
+  position: relative;
   text-align: center;
   padding: 10px 12px 4px;
 }
@@ -35,6 +36,18 @@
   font-size: 0.85rem;
 }
 
+.setlist-edit-btn {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  background: var(--color-surface);
+  color: var(--color-dark);
+  border: 1.5px solid var(--color-gold);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+}
+
 .viewer-shell {
   flex: 1;
   min-height: 0;
@@ -42,6 +55,33 @@
   flex-direction: column;
   width: 100%;
   position: relative;
+}
+
+/* Horizontal strip of songs that snaps one song at a time. */
+.song-pager {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  outline: none;
+}
+
+.song-pager::-webkit-scrollbar {
+  display: none;
+}
+
+.song-pager-page {
+  --swipe-scale: 1;
+  --swipe-opacity: 1;
+  flex: 0 0 100%;
+  position: relative;
+  scroll-snap-align: start;
+  scroll-snap-stop: always; /* a hard flick moves one song, never skips two */
 }
 
 .setlist-footer {
@@ -66,8 +106,9 @@
   text-align: center;
 }
 
-.setlist-footer-link {
-  flex: 0 0 auto;
-  text-align: center;
-  padding: 4px 12px 0;
+.song-pager-page .song-view {
+  transform: scale(var(--swipe-scale));
+  opacity: var(--swipe-opacity);
+  transform-origin: center;
+  will-change: transform, opacity;
 }

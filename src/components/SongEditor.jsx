@@ -1,66 +1,45 @@
 import { useMemo, useState } from "react";
 import SongView from "./SongView";
-import { draftFromRawText } from "../lib/twoLineToBracket";
+import PublishSetup from "./PublishSetup";
 import { addLocalSong, uniqueId } from "../lib/addedSongs";
-import { getSavedPasscode, savePasscode, syncSongsToGitHub } from "../lib/syncSongs";
+import { getSyncSettings, saveSyncSettings, syncSongsToGitHub } from "../lib/syncSongs";
 import "./SongEditor.css";
 
 export default function SongEditor({ songs, onChange, onBack }) {
   const [title, setTitle] = useState("");
   const [tempo, setTempo] = useState("fast");
-  const [rawText, setRawText] = useState("");
-  const [draft, setDraft] = useState("");
-  const [passcode, setPasscode] = useState(() => getSavedPasscode());
-  const [syncState, setSyncState] = useState(null); // null | "saving" | "synced" | "error"
+  const [text, setText] = useState("");
+  const [settings, setSettings] = useState(getSyncSettings);
+  const [syncState, setSyncState] = useState(null); // null | "saving" | "synced" | "local" | "error"
   const [syncError, setSyncError] = useState("");
-  const [savedId, setSavedId] = useState(null);
-
-  function handleConvert() {
-    setDraft(draftFromRawText(rawText));
-  }
 
   const previewSong = useMemo(() => {
-    const lines = (draft || rawText)
-      .split("\n")
-      .map((text) => ({ text }));
-    return {
-      id: "preview",
-      title: title || "Untitled Song",
-      tempo,
-      lines: lines.length ? lines : [{ text: "" }],
-    };
-  }, [draft, rawText, title, tempo]);
+    const lines = text.split("\n").map((t) => ({ text: t }));
+    return { id: "preview", title: title || "Untitled Song", tempo, lines };
+  }, [text, title, tempo]);
 
   async function handleSave() {
     if (!title.trim()) return;
-    const id = uniqueId(title, songs);
     const newSong = {
-      id,
+      id: uniqueId(title, songs),
       title,
       tempo,
-      lines: (draft || rawText).split("\n").map((text) => ({ text })),
+      lines: text.split("\n").map((t) => ({ text: t })),
     };
 
-    // Always save locally first -- this device sees the new song right away.
+    // Always save on this device first.
     addLocalSong(newSong);
     onChange();
-    setSavedId(id);
 
-    if (!passcode.trim()) {
-      setSyncState("error");
-      setSyncError("Saved on this device. Enter the publish code above to also push this live for everyone.");
+    if (!settings.token.trim()) {
+      setSyncState("local");
       return;
     }
-
-    savePasscode(passcode);
+    saveSyncSettings(settings);
     setSyncState("saving");
-    setSyncError("");
-
-    const updatedSongs = [...songs, newSong];
-    const result = await syncSongsToGitHub(updatedSongs, passcode, `Add song: ${title}`);
-    if (result.ok) {
-      setSyncState("synced");
-    } else {
+    const result = await syncSongsToGitHub([...songs, newSong], settings, `Add song: ${title}`);
+    if (result.ok) setSyncState("synced");
+    else {
       setSyncState("error");
       setSyncError(result.error);
     }
@@ -68,8 +47,8 @@ export default function SongEditor({ songs, onChange, onBack }) {
 
   return (
     <div className="song-editor">
-      <button className="link-btn" onClick={onBack}>
-        ← Back
+      <button className="link-btn editor-back" onClick={onBack}>
+        ‹ Library
       </button>
       <h1 className="editor-heading">Add Song</h1>
 
@@ -87,57 +66,33 @@ export default function SongEditor({ songs, onChange, onBack }) {
         </div>
       </div>
 
-      <p className="editor-help">
-        Paste the chord line directly above its lyric line (like the original
-        sheet) and tap Convert — it will turn into bracket notation
-        automatically. You can also just type bracket notation directly, e.g.
-        <code> [G]Amazing [C]grace</code>.
-      </p>
-
-      <textarea
-        className="editor-raw-textarea"
-        rows={6}
-        placeholder={"G          C\nAmazing grace how sweet the sound"}
-        value={rawText}
-        onChange={(e) => setRawText(e.target.value)}
-      />
-      <button className="link-btn" onClick={handleConvert}>
-        Convert to Bracket Notation
-      </button>
-
       <textarea
         className="editor-draft-textarea"
-        rows={8}
+        rows={10}
         placeholder="[G]Amazing [C]grace how sweet the sound"
-        value={draft}
-        onChange={(e) => setDraft(e.target.value)}
+        value={text}
+        onChange={(e) => setText(e.target.value)}
       />
 
       <div className="editor-preview-box">
         <SongView song={previewSong} />
       </div>
 
-      <div className="song-picker-field">
-        <label className="picker-field-label">Publish code (to save live for everyone)</label>
-        <input
-          type="password"
-          value={passcode}
-          onChange={(e) => setPasscode(e.target.value)}
-          placeholder="Enter the code"
-        />
-      </div>
+      <PublishSetup settings={settings} onChange={setSettings} />
 
       <button className="save-btn" onClick={handleSave} disabled={!title.trim()}>
         {syncState === "saving" ? "Saving…" : "Save Song"}
       </button>
 
-      {savedId && syncState === "synced" && (
+      {syncState === "synced" && (
         <p className="sync-status sync-status-ok">
-          Saved and published — live for everyone in about a minute once the
-          site rebuilds.
+          Saved and published — everyone gets it in about 1–2 minutes.
         </p>
       )}
-      {savedId && syncState === "error" && <p className="sync-status sync-status-error">{syncError}</p>}
+      {syncState === "local" && (
+        <p className="sync-status sync-status-ok">Saved on this device.</p>
+      )}
+      {syncState === "error" && <p className="sync-status sync-status-error">{syncError}</p>}
     </div>
   );
 }

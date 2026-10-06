@@ -1,6 +1,5 @@
 import { useLayoutEffect, useRef, useState } from "react";
 import ChordLine from "./ChordLine";
-import { useSwipeNav } from "../lib/useSwipeNav";
 import "./SongView.css";
 
 // Lyrics/chords try to fill the screen at a large, comfortable size, and
@@ -9,8 +8,7 @@ import "./SongView.css";
 // song doesn't fit at that size, binary-search down toward FIT_MIN for
 // the largest size that still fits with no scrolling. If it still
 // doesn't fit even at FIT_MIN, we stop there and let it scroll a little
-// rather than shrinking further -- an occasional scroll on a very long
-// song beats unreadably tiny text.
+// rather than shrinking further.
 const FIT_MAX = 24;
 const FIT_MIN = 13;
 const FIT_ITERATIONS = 18;
@@ -61,26 +59,19 @@ function useFitToContainer(deps) {
   return { outerRef, innerRef, fit };
 }
 
-export default function SongView({ song, revealed, topOverlay, onTapBody, onSwipePrev, onSwipeNext }) {
+// Swiping between songs is handled by the pager in SetlistViewer (native
+// scroll-snap), so this component only needs to report taps.
+export default function SongView({ song, revealed, onTapBody }) {
   const { outerRef, innerRef } = useFitToContainer([song && song.id]);
-  // Swipe left -> next song, swipe right -> previous song (the natural
-  // "flip a page forward/back" direction); a plain tap toggles the
-  // chip overlay, same as before.
-  const swipeHandlers = useSwipeNav({
-    onTap: onTapBody,
-    onSwipeLeft: onSwipeNext,
-    onSwipeRight: onSwipePrev,
-  });
   if (!song) return null;
 
   return (
     <div className="song-view" ref={outerRef}>
-      {topOverlay}
       <div
         className="song-view-inner"
         ref={innerRef}
         style={revealed ? { paddingTop: 54 } : undefined}
-        {...swipeHandlers}
+        onClick={onTapBody}
       >
         <div className="song-view-header">
           <div className="song-view-title">{song.title}</div>

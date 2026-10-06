@@ -26,6 +26,9 @@
   --color-border: var(--color-khaki);
   --color-bg: var(--color-cream);
 
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+
   --font-regular: "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-bold: "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-lyric: "DM Mono", "Courier New", monospace;
@@ -46,9 +49,14 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
+/* Pinned to all four screen edges so the app fills the whole screen when
+   installed to the iPhone home screen (no cream band under the tab bar). */
 #root {
-  height: 100vh;
-  height: 100dvh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
 }
@@ -78,6 +86,7 @@ button.link-btn {
 
 select,
 input[type="text"],
+input[type="password"],
 input[type="date"] {
   font-family: var(--font-regular);
   font-size: 1rem;

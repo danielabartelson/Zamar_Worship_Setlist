@@ -142,23 +142,30 @@
 /* A-Z index strip, pinned to the right edge like the Hymns app screenshot */
 .az-index {
   position: absolute;
-  top: 6px;
-  right: 4px;
-  bottom: 6px;
+  top: 4px;
+  right: 2px;
+  bottom: 4px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1px;
+  gap: 0;
   z-index: 5;
 }
 
+/* Letters shrink to share whatever height is available, so all 26 always
+   fit on the screen (previously the strip got clipped on iPhones). */
 .az-index span {
+  flex: 0 1 22px;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: var(--font-bold);
   font-weight: 700;
   font-size: 0.64rem;
   color: var(--color-gold);
-  line-height: 1.5;
+  line-height: 1;
   padding: 0 3px;
   cursor: pointer;
 }

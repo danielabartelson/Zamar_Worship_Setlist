@@ -7,7 +7,7 @@
   display: flex;
   background: var(--color-surface);
   border-top: 1px solid var(--color-gold);
-  padding-bottom: env(safe-area-inset-bottom);
+  padding-bottom: var(--safe-bottom);
 }
 
 .bottom-nav-btn {

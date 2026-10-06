@@ -1,13 +1,15 @@
 import { useMemo, useRef, useState } from "react";
 import { TEMPO_LABELS } from "../data/sampleSongs";
 import { setOverride } from "../lib/songOverrides";
+import { getSyncSettings, syncSongsToGitHub } from "../lib/syncSongs";
 import "./SongLibrary.css";
 
 const AZ_LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
-export default function SongLibrary({ songs, onChange, onBack, onEditSong }) {
+export default function SongLibrary({ songs, onChange, onAddSong, onEditSong }) {
   const [query, setQuery] = useState("");
   const scrollRef = useRef(null);
+  const [status, setStatus] = useState(null); // null | { kind: "saving" | "ok" | "error", text }
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -25,9 +27,28 @@ export default function SongLibrary({ songs, onChange, onBack, onEditSong }) {
     return set;
   }, [filtered]);
 
-  function handleTempoChange(songId, tempo) {
+  async function handleTempoChange(songId, tempo) {
+    // Always saves on this device first...
     setOverride(songId, { tempo });
     onChange();
+
+    // ...and, if this device has the GitHub token set up, publishes it for
+    // everyone too.
+    const settings = getSyncSettings();
+    if (!settings.token.trim()) return;
+    const song = songs.find((s) => s.id === songId);
+    setStatus({ kind: "saving", text: "Publishing…" });
+    const updated = songs.map((s) => (s.id === songId ? { ...s, tempo } : s));
+    const result = await syncSongsToGitHub(
+      updated,
+      settings,
+      `Set tempo: ${song ? song.title : songId} → ${tempo}`
+    );
+    setStatus(
+      result.ok
+        ? { kind: "ok", text: "Published for everyone — live in about 1–2 minutes." }
+        : { kind: "error", text: result.error }
+    );
   }
 
   function jumpToLetter(letter) {
@@ -41,15 +62,12 @@ export default function SongLibrary({ songs, onChange, onBack, onEditSong }) {
 
   return (
     <div className="song-library">
-      <button className="link-btn" onClick={onBack}>
-        ← Back
-      </button>
-      <h1 className="library-heading">Song Library</h1>
-      <p className="library-help">
-        Fix a song's Fast / Slow tag here — changes save on this device
-        immediately and show up right away in the Setlist Builder. Tap Edit
-        to fix the lyrics or move a chord.
-      </p>
+      <div className="library-top">
+        <h1 className="library-heading">Song Library</h1>
+        <button className="library-add-btn" onClick={onAddSong}>
+          + Add Song
+        </button>
+      </div>
       <input
         type="text"
         placeholder="Search songs…"
@@ -58,10 +76,8 @@ export default function SongLibrary({ songs, onChange, onBack, onEditSong }) {
         className="library-search"
       />
 
-      {/* Reuses the same scrollable-list + right-edge A-Z index layout as
-          the song picker popup (song-list-panel/song-list-scroll/az-index
-          in SongPickerField.css) -- same jump-to-letter behavior, just
-          with the Library's own card-style rows inside it. */}
+      {status && <p className={"library-status library-status-" + status.kind}>{status.text}</p>}
+
       <div className="song-list-panel">
         <div className="song-list-scroll" ref={scrollRef}>
           {filtered.length === 0 && (
