@@ -905,7 +905,7 @@
     "id": "fear-not",
     "title": "Fear Not",
     "key": "Gm",
-    "tempo": "fast",
+    "tempo": "slow",
     "lines": [
       {
         "text": "[Gm]Fear not; For I am with you"
@@ -2555,7 +2555,7 @@
     "id": "my-life-is-in-you-lord",
     "title": "My Life Is In You Lord",
     "key": "G",
-    "tempo": "slow",
+    "tempo": "fast",
     "lines": [
       {
         "text": "[G]My Life Is In You Lord, [Em]My strength is in You Lord, [C]my hope is in You Lord, in [G-D]You"
@@ -4240,7 +4240,7 @@
     "id": "woke-up-this-morning",
     "title": "Woke Up This Morning",
     "key": "G",
-    "tempo": "slow",
+    "tempo": "fast",
     "lines": [
       {
         "text": "[G]Woke up this morning with my mind....stayed on Jesus"
