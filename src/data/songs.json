@@ -435,7 +435,7 @@
     "id": "at-the-cross",
     "title": "At the Cross",
     "key": "F",
-    "tempo": "slow",
+    "tempo": "fast",
     "lines": [
       {
         "text": "[F]At the cross, at the cross where I first saw the [C]light"
@@ -584,7 +584,7 @@
     "id": "awesome",
     "title": "Awesome",
     "key": "E",
-    "tempo": "fast",
+    "tempo": "slow",
     "lines": [
       {
         "text": "[E]My God is awesome, He can move mountains, [B]"
@@ -690,7 +690,7 @@
     "id": "christ-is-enough",
     "title": "Christ Is Enough",
     "key": "G",
-    "tempo": "fast",
+    "tempo": "slow",
     "lines": [
       {
         "text": "[Em]Intro: [C] [G] [D/F#]"
@@ -734,7 +734,7 @@
     "id": "death-could-not-hold-you-down",
     "title": "Death Could Not Hold You Down",
     "key": "G",
-    "tempo": "fast",
+    "tempo": "slow",
     "lines": [
       {
         "text": "[G]Hallelujah, [A]You have [D]won the victory [G] [D] [A]"
@@ -905,7 +905,7 @@
     "id": "fear-not",
     "title": "Fear Not",
     "key": "Gm",
-    "tempo": "slow",
+    "tempo": "fast",
     "lines": [
       {
         "text": "[Gm]Fear not; For I am with you"
@@ -1379,7 +1379,7 @@
     "id": "for-he-is-lord",
     "title": "For He Is Lord",
     "key": "G",
-    "tempo": "fast",
+    "tempo": "slow",
     "lines": [
       {
         "text": "[G]For he is Lord, [Am/D]He is Lord[G/C/G]"
@@ -1883,7 +1883,7 @@
     "id": "if-my-people",
     "title": "If My People",
     "key": "D",
-    "tempo": "slow",
+    "tempo": "fast",
     "lines": [
       {
         "text": "[D]If my people (If My people)"
@@ -2009,7 +2009,7 @@
     "id": "it-is-done",
     "title": "It Is Done",
     "key": "G",
-    "tempo": "fast",
+    "tempo": "slow",
     "lines": [
       {
         "text": "[Em]Jesus came to the [C]earth in search of [D]broken lives"
@@ -2265,55 +2265,49 @@
     "tempo": "slow",
     "lines": [
       {
-        "text": "[G]Let the [D7]rain of your [Em]presence fall [G7]on me"
+        "text": "Verse"
+      },
+      {
+        "text": "Let the [G]rain of your [D#]presence fall on [Em]me [G]"
       },
       {
         "text": ""
       },
       {
-        "text": "[C]Every day that [G]I live, with [Am7]every breath I [D]breathe"
+        "text": "Every [C]day that I [G]live, with [Am7]every breath I [D]breathe"
       },
       {
         "text": ""
       },
       {
-        "text": "[G]Let the [D]rain of your presence fall [Em]on [G]me"
+        "text": "Let the [G]rain of your [D]presence fall on [Em]me [G]"
       },
       {
         "text": ""
       },
       {
-        "text": "[C]Every where [G]that I go"
+        "text": "Every [C]where that I [G]go Lord, [Am]let your presence [D]flow, rain on [C]me [G]"
       },
       {
         "text": ""
       },
       {
-        "text": "[Am]Lord, let your [D]presence flow, [C]rain on [G]me"
+        "text": "Chorus"
+      },
+      {
+        "text": "[G]Love [D]divine, joy [C]unspeaka[G]ble, [D]Overflowing in my [G]soul"
       },
       {
         "text": ""
       },
       {
-        "text": "[D]Love divine, [C]joy [G]unspeakable, [D]Overflowing in my [G]soul"
+        "text": "This heart of [C]mi[D]ne is [Bm]refreshed and at [Em]rest"
       },
       {
         "text": ""
       },
       {
-        "text": "[C]This [D]heart of [Bm]mine is refreshed and at [Em]rest"
-      },
-      {
-        "text": ""
-      },
-      {
-        "text": "[Am7]In your presence"
-      },
-      {
-        "text": ""
-      },
-      {
-        "text": "[C]In your presence, [D7]rain on [G]me"
+        "text": "In your [Am]presence, In your [C]presence, [D]rain on [G]me"
       }
     ]
   },
@@ -2767,7 +2761,7 @@
   },
   {
     "id": "nothing-but-the-blood-of-jesus-slow",
-    "title": "Nothing But The Blood Of Jesus (Slow)",
+    "title": "Nothing But The Blood Of Jesus ",
     "key": "Bb",
     "tempo": "slow",
     "lines": [
@@ -2823,60 +2817,18 @@
   },
   {
     "id": "nothing-but-the-blood-of-jesus",
-    "title": "Nothing But The Blood Of Jesus",
+    "title": "",
     "key": "Em",
     "tempo": "slow",
     "lines": [
       {
-        "text": "[Em7]What can wash away my sin? [CMaj7]Nothing but the [Am7]Blood of [B7]Je-[Em7]sus"
-      },
-      {
         "text": ""
-      },
-      {
-        "text": "[Em7]What can make me whole again? [CMaj7]Nothing but the [Am7]Blood of [B7]Je-[Em7]sus"
-      },
-      {
-        "text": ""
-      },
-      {
-        "text": "[Am7]Oh [Bm7]precious is the [CMaj7]flow that makes me [Bm7]white as snow"
-      },
-      {
-        "text": ""
-      },
-      {
-        "text": "[Am7]No other [Bm7]fount I know [CMaj7]nothing but the [Am7]Blood of [B7]Je-[Em7]sus"
-      },
-      {
-        "text": ""
-      },
-      {
-        "text": "For my pardon this I see; nothing but the Blood of Je-sus"
-      },
-      {
-        "text": ""
-      },
-      {
-        "text": "For my cleansing this my plea; nothing but the Blood of Je-sus"
-      },
-      {
-        "text": ""
-      },
-      {
-        "text": "This is all my hope and peace; nothing but the Blood of Je-sus"
-      },
-      {
-        "text": ""
-      },
-      {
-        "text": "This is all my righteousness; nothing but the Blood of Je-sus"
       }
     ]
   },
   {
     "id": "oh-the-blood-slow",
-    "title": "Oh The Blood (Slow)",
+    "title": "Oh The Blood",
     "key": "F",
     "tempo": "slow",
     "lines": [
@@ -2966,7 +2918,7 @@
     "id": "one-drop-of-blood",
     "title": "One Drop Of Blood",
     "key": "G",
-    "tempo": "fast",
+    "tempo": "slow",
     "lines": [
       {
         "text": "[G]I wasn't [D]there when the [C]nails"
@@ -3069,7 +3021,7 @@
     "id": "our-god-is-an-awesome-god",
     "title": "Our God Is An Awesome God",
     "key": "C",
-    "tempo": "fast",
+    "tempo": "slow",
     "lines": [
       {
         "text": "[C]Our God is an awesome [G]God,"
@@ -3296,7 +3248,7 @@
     "id": "revive-us-lord",
     "title": "Revive Us Lord",
     "key": "F",
-    "tempo": "slow",
+    "tempo": "fast",
     "lines": [
       {
         "text": "[F]Revive us Lord, [A]Revive us Lord,"
@@ -3389,7 +3341,7 @@
     "id": "great-awakening",
     "title": "Great Awakening",
     "key": "F",
-    "tempo": "fast",
+    "tempo": "slow",
     "lines": [
       {
         "text": "[F]There's gonna be a [C]great awakening [Dm]"
@@ -3444,7 +3396,7 @@
     "id": "seek-your-face",
     "title": "Seek Your Face",
     "key": "A",
-    "tempo": "slow",
+    "tempo": "fast",
     "lines": [
       {
         "text": "[A]Lord I long to [D]seek your face, [E]I've come into this [A]holy place to worship, [D] [E] [F#m] [Bm7] [D/x] To worship..."
@@ -3470,7 +3422,7 @@
     "id": "shout-to-the-lord",
     "title": "Shout To The Lord",
     "key": "A",
-    "tempo": "fast",
+    "tempo": "slow",
     "lines": [
       {
         "text": "[A]My Jesus, my [E]Savior; [F#m]Lord, there is none [E]like You[D]"
@@ -4296,7 +4248,7 @@
     "id": "worthy-of-it-all",
     "title": "Worthy Of It All",
     "key": "E",
-    "tempo": "slow",
+    "tempo": "fast",
     "lines": [
       {
         "text": "[A2]All the saints and [Bsus]angels, They [A2]bow before [Bsus]Your throne"
@@ -4555,7 +4507,7 @@
     "id": "be-exalted",
     "title": "Be Exalted",
     "key": "Bb",
-    "tempo": "fast",
+    "tempo": "slow",
     "lines": [
       {
         "text": "[Bb]I will [Eb]give thanks to [Bb]Thee, Oh [Bb]Lord [Eb]among the [Bb]people."
@@ -4787,7 +4739,7 @@
     "id": "bless-the-lamb",
     "title": "Bless The Lamb",
     "key": "C",
-    "tempo": "fast",
+    "tempo": "slow",
     "lines": [
       {
         "text": "[C]You're my [Dm]refuge and my [G7]strength,"
@@ -5156,7 +5108,7 @@
     "id": "goodbye-world",
     "title": "Goodbye World",
     "key": "D",
-    "tempo": "slow",
+    "tempo": "fast",
     "lines": [
       {
         "text": "[D]Goodbye world, I [G]can't stay no [D]longer with you"
@@ -5647,7 +5599,7 @@
     "id": "how-great-is-our-god",
     "title": "How Great Is Our God",
     "key": "A",
-    "tempo": "fast",
+    "tempo": "slow",
     "lines": [
       {
         "text": "[A]The splendor of the king, [A/F#]clothed in majesty - let all the earth rejoice, [D2]all the earth rejoice."
@@ -5688,7 +5640,7 @@
     "id": "i-believe",
     "title": "I Believe (The Creed)",
     "key": "C",
-    "tempo": "fast",
+    "tempo": "slow",
     "lines": [
       {
         "text": "[C] [Em] [D] [G/B] [C] 2x"
@@ -5883,7 +5835,7 @@
     "id": "i-know-a-name",
     "title": "I Know A Name",
     "key": "G",
-    "tempo": "fast",
+    "tempo": "slow",
     "lines": [
       {
         "text": "[G] [F/A] [C]"
