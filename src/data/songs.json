@@ -5352,34 +5352,28 @@
     "tempo": "slow",
     "lines": [
       {
-        "text": "[A]Holy, [B]holy... [E]Holy is the [A]Lord [F#m] [B] [C#m]"
+        "text": "Verse"
+      },
+      {
+        "text": "[A]Ho[B]ly, [E]ho[A]ly... [F#m]Holy [B]is the [C#m]Lord"
+      },
+      {
+        "text": "[A]Ho[B]ly, [E]Ho[A]ly... [F#m]Holy [B]is the [E]Lord"
       },
       {
         "text": ""
       },
       {
-        "text": "[A]Holy, [B]Holy... [E]Holy [A]is the [F#m]Lord [B] [E]"
+        "text": "Chorus"
       },
       {
-        "text": ""
+        "text": "He is [A]high and [E]exalted and [F#m]worthy of [B]praise"
       },
       {
-        "text": "[A]He is high and [E/G#]exalted and [F#m]worthy of [B]praise"
+        "text": "With our [A]hearts we will [E]love and [B]adore,"
       },
       {
-        "text": ""
-      },
-      {
-        "text": "[A]With our hearts we will [E/G#]love and [B]adore,"
-      },
-      {
-        "text": ""
-      },
-      {
-        "text": "[A]He is high and [E/G#]exalted and [F#m]worthy of [B]praise"
-      },
-      {
-        "text": ""
+        "text": "He is [A]high and [E]exalted and [F#m]worthy of [B]praise"
       },
       {
         "text": "[A]Holy [B]is the [E]Lord"
