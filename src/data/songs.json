@@ -6222,7 +6222,7 @@
     "tempo": "slow",
     "lines": [
       {
-        "text": "Sweep [F]over my soul, sweep [Bb]over my soul"
+        "text": "Sweep [F]over my [Bb]soul, sweep over my [F]soul"
       },
       {
         "text": "Sweet [F]spirit, sweep [Bb]over my [F]soul"
@@ -6232,6 +6232,55 @@
       },
       {
         "text": "Sweet [F]Spirit, sweep over my [F]soul"
+      }
+    ]
+  },
+  {
+    "id": "create-in-me-a-clean-heart",
+    "title": "Create in me a clean heart",
+    "tempo": "slow",
+    "lines": [
+      {
+        "text": "Verse"
+      },
+      {
+        "text": "[F]Create in me a [C]clean heart [Bb]oh [F]God,"
+      },
+      {
+        "text": "And renew a right [C]spirit within [F]me;"
+      },
+      {
+        "text": "[F]Create in me a [C]clean heart [Bb]oh [F]God, "
+      },
+      {
+        "text": "and renew a right [C]spirit within [F]me"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "Chorus"
+      },
+      {
+        "text": "[Bb]Cast me not [C]away from thy [F]presence O [Dm]Lord, "
+      },
+      {
+        "text": "And [Bb]take not thy [C]Holy Spirit from [F]me[Dm]"
+      },
+      {
+        "text": "[Bb]Restore unto [C]me, the [A]joy of Thy [Dm]salvation,"
+      },
+      {
+        "text": "[Bb]And renew a right [C]spirit within [F]me"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
       }
     ]
   }
