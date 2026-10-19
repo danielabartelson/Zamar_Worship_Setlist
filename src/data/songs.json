@@ -4929,16 +4929,19 @@
     "tempo": "fast",
     "lines": [
       {
-        "text": "[G]God is greater than my problems, [Em7]and greater than my fears"
+        "text": "Verse"
       },
       {
-        "text": "[Am7]He is greater than my failings, [Dsus]and faithful [D]through the years"
+        "text": "God is [G]greater than my problems, and [Em7]greater than my fears"
+      },
+      {
+        "text": "He is [Am7]greater than my failings, and [Dsus]faithful through the [D]years"
       },
       {
         "text": ""
       },
       {
-        "text": "[G]God is greater than the enemy, [Em7]and every human plan"
+        "text": "God is [G]greater than the enemy, and [Em7]every human plan"
       },
       {
         "text": "[Am7]Every word of [C]God will [D]always stand"
@@ -4947,16 +4950,19 @@
         "text": ""
       },
       {
-        "text": "[Em7]God of glory, [Am7]King [C]of [D]Majesty!"
+        "text": "[Em7]God of glory, [Am7]King of [C]Majes[D]ty!"
       },
       {
         "text": ""
       },
       {
+        "text": "Chorus"
+      },
+      {
         "text": "[G]God is greater - [Em7]Lord, Creator"
       },
       {
-        "text": "[Am7]God of wonders [C]high above [D]all things"
+        "text": "[Am7]God of wonders [C]high above all [D]things"
       },
       {
         "text": "[G]God is greater - [Em7]Lord, Creator"
@@ -4968,7 +4974,7 @@
         "text": ""
       },
       {
-        "text": "[G]He's the King of Kings!"
+        "text": "He's the King of [G]Kings!"
       }
     ]
   },
