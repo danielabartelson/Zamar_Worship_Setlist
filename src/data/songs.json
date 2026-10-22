@@ -2047,37 +2047,37 @@
     "tempo": "fast",
     "lines": [
       {
-        "text": "[F]It is good [Bb]it is good [Gm]it is good to [C]give thanks to the [F]Lord on [Bb]High[Gm][C]"
+        "text": "It is [F]good it is [Bb]good it is good to give [C]thanks to the [F]Lord on [Bb]High[Gm][C]"
       },
       {
-        "text": "[F]To sing [Bb]of your [Gm]faithfulness and [C]loving kindness [F]both day [Bb]and night"
+        "text": "To [F]sing of your [Bb]faithfulness [Gm]and loving [C]kindness both [F]day and [Bb]night [Gm][C]"
       },
       {
-        "text": "[F]To play on our [Bb]instruments sweet [Gm]songs of praise [C]for the things [F]you do[Bb][Gm][C]"
+        "text": "To [F]play on our [Bb]instruments [Gm]sweet songs of [C]praise for the [F]things [F]you [Bb]do [Gm C]"
       },
       {
-        "text": "[F]It is good [Bb]it is good [Gm]it is good to [C]give thanks to [F]you[Bb][Gm][C][F]"
-      },
-      {
-        "text": ""
-      },
-      {
-        "text": "[Bb]For though the [C]wicked spring up [Dm]like the grass [C]and are [F]everywhere...[Bb]"
-      },
-      {
-        "text": "[F]soon they [Dm]will [C]perish"
-      },
-      {
-        "text": "[Bb]for all those [C]planted in your [Dm]house will [Gm]grow without [C]end.  [Bb]Sing it [C]again"
+        "text": "It is [F]good it is [Bb]good it is [Gm]good to [C]give thanks to [F]you[Bb][Gm][C][F]"
       },
       {
         "text": ""
       },
       {
-        "text": "[Bb]For though we [C]struggle and trials [Dm]and troubles [C]still come [F]our way;[Bb]"
+        "text": "[Bb]For though the [C]wicked spring [Dm]up like the [C]grass and are [F]every[Bb]where..."
       },
       {
-        "text": "[F]you [Dm]won't forsake [C]us"
+        "text": "[F]soon they will [Dm]pe[C]rish"
+      },
+      {
+        "text": "[Bb]for all those [C]planted in [Dm]your [Dm]house will [Gm]grow without [C]end.  [Bb]Sing it [C]again"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "[Bb]For though we [C]struggle and [Dm]trials [C]and troubles still [F]come our [Bb]way;"
+      },
+      {
+        "text": "[F]you [Dm]won't [Dm]forsake [C]us"
       },
       {
         "text": "[Bb]Your word has [C]told us your [Dm]promises [Gm]will never [C]end....[Bb]Sing it [C]again"
@@ -2089,25 +2089,28 @@
         "text": "[F]Why give him [Bb]praise?  [C]Because he is [F]worthy"
       },
       {
-        "text": "[F]Why should we [Bb]sing?  [C]He loves you and [F]me"
+        "text": "[F]Why should we [Bb]sing? He [C]loves you and [F]me"
       },
       {
         "text": "[F]Why give him [Bb]thanks?  [C]Because he forgave [F]us"
       },
       {
-        "text": "[F]Why celebrate?  [Bb]Because [C]we are [F]free"
+        "text": "[F]Why celebrate? [C]Because we are [F]free"
       },
       {
-        "text": "[F]Then when should we [Bb]thank him?  [C]Both morning and [Dm]evening"
+        "text": "Then [F]when should we [Bb]thank him?  Both [C]morning and [Dm]evening"
       },
       {
-        "text": "[F]In what circumstance? [Bb]The good [C]and the [F]bad"
+        "text": "In [F]what circums[Bb]tance? The [C]good and the [F]bad"
       },
       {
-        "text": "[F]It ain't always [Bb]easy. [C]Though it's not so [Dm]easy"
+        "text": "It [F]ain't always [Bb]easy. Though [C]it's not so [Dm]easy"
       },
       {
-        "text": "[F]But is it good, [Bb]yes it's good [Bb]it is good [C]it is good...."
+        "text": "[F]But is it good, yes it's [Bb]good it is [Bb]good it is [C]good...."
+      },
+      {
+        "text": "Sing it again"
       }
     ]
   },
