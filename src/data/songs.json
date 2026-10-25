@@ -3210,25 +3210,31 @@
     "tempo": "slow",
     "lines": [
       {
-        "text": "Intro: [Bmaj7] [F#] [D#m] [C#sus-C#]"
+        "text": "[Bmaj7] [F#] [D#m] [C#sus-C#]"
       },
       {
         "text": ""
       },
       {
-        "text": "[B]I went down to the crimson river, [F#]Left my burdens on the [B]shore [C#sus-C#]"
+        "text": "Verse"
       },
       {
-        "text": "[B]I went down a sinner, [D#m]came up a saint, [B]Died with Christ, [C#]now [F#]I'm reborn [F#sus] [F#]"
+        "text": "I went [B]down to the crimson [F#m]river, Left my [B]burdens on the [C#sus-C#]shore"
       },
       {
-        "text": "[B]Yes, He washed me in His mercy, [F#]And He cleansed me with His [B]blood [C#sus-C#]"
+        "text": "I went [B]down a sinner, came [D#m]up a saint, Died with [B]Christ, now [C#]I'm [F#]reborn [F#sus] [F#]"
       },
       {
-        "text": "[B]Now I stand complete, [D#m]I have been set free, [B]I found [C#]life [F#]there in the flood [F#sus] [F#]"
+        "text": "Yes, He [B]washed me in His [F#]mercy, And He [B]cleansed me with His [C#sus-C#]blood"
+      },
+      {
+        "text": "Now I [B]stand complete, I have [D#m]been set free, I found [B]life there [C#]in the [F]flood [F#sus] [F#]"
       },
       {
         "text": ""
+      },
+      {
+        "text": "Chorus"
       },
       {
         "text": "[Bmaj7]Not the same, I am changed, [F#]Redeemed by the [D#m]blood of the Lamb [C#]"
@@ -3241,6 +3247,9 @@
       },
       {
         "text": ""
+      },
+      {
+        "text": "Verse"
       },
       {
         "text": "[B]Now I have the living water, [F#]From the well that won't run [B]dry [C#sus-C#]"
@@ -3252,16 +3261,7 @@
         "text": ""
       },
       {
-        "text": "[Bmaj7]Not the same, I am changed, [F#]Redeemed by the [D#m]blood of the Lamb [C#]"
-      },
-      {
-        "text": "[Bmaj7]By His grace, I am saved, [F#]I'm His child, [D#m]forever, I am [C#]"
-      },
-      {
-        "text": "[B]Halle[C#]-lu[D#m]-jah, [C#sus] [C#]Redeemed by the blood of the Lamb [Bmaj7] [F#] [D#m] [C#sus] [C#]"
-      },
-      {
-        "text": ""
+        "text": "Verse"
       },
       {
         "text": "[B]When it's time to cross that river, [F#]I will shine in glorious [B]light [C#sus-C#]"
