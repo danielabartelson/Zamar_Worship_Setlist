@@ -587,22 +587,28 @@
     "tempo": "slow",
     "lines": [
       {
-        "text": "[E]My God is awesome, He can move mountains, [B]"
+        "text": "Verse"
       },
       {
-        "text": "[C#m]keep me in the valley, hide me from the rain, [A]"
+        "text": "My God is [E]awesome, He can move [B]mountains,"
       },
       {
-        "text": "[E]My God is awesome, heals me when I'm broken, [B]"
+        "text": "keep me in the [C#m]valley, hide me from the [A]rain,"
       },
       {
-        "text": "[C#m]strength where I've been weakened forever He will reign (x2) [A]"
+        "text": "My God is [E]awesome, heals me when I'm [B]broken,"
+      },
+      {
+        "text": "[strength where I've been [C#m]weakened forever He will [A]reign (x2)"
       },
       {
         "text": ""
       },
       {
-        "text": "[E]My God is awesome, [B]awesome,"
+        "text": "Chorus"
+      },
+      {
+        "text": "My God is [E]awesome, [B]awesome,"
       },
       {
         "text": "[C#m]awesome, [A]awesome (x2)"
@@ -611,28 +617,25 @@
         "text": ""
       },
       {
-        "text": "[E]My God is awesome, savior of the whole world, [B]"
+        "text": "Verse"
       },
       {
-        "text": "[C#m]giver of salvation, by His stripes I am healed, [A]"
+        "text": "My God is [E]awesome, savior of the [B]whole world,"
       },
       {
-        "text": "[E]My God is awesome, today I am forgiven, [B]"
+        "text": "giver of [C#m]salvation, by His stripes I am [A]healed,"
       },
       {
-        "text": "[C#m]His grace is why I'm living, praise His holy name [A]"
+        "text": "My God is [E]awesome, today I am [B]forgiven,"
       },
       {
-        "text": ""
-      },
-      {
-        "text": "[E]My God is awesome, [B]awesome,"
-      },
-      {
-        "text": "[C#m]awesome, [A]awesome (x2)"
+        "text": "His grace is why I'm [C#m]living, praise His holy [A]name"
       },
       {
         "text": ""
+      },
+      {
+        "text": "Alt Chorus"
       },
       {
         "text": "He's mighty, He's mighty; He's mighty, awesome, awesome"
