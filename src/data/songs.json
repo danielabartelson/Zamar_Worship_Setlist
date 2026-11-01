@@ -1624,34 +1624,40 @@
     "tempo": "slow",
     "lines": [
       {
-        "text": "[D]I need you more, [Bm]more than [Em]yesterday"
+        "text": "Verse"
       },
       {
-        "text": "[A]I need you more, [G]more than words can [D]say"
+        "text": "I need you [D]more, [Bm]more than yester[Em]day"
       },
       {
-        "text": "[Bm]I need you more than [G]ever before"
+        "text": "I need you [A]more, [G]more than words can [D]say"
       },
       {
-        "text": "[Em]I need you [A]Lord, I need you [D]Lord"
+        "text": "I need you [Bm]more than [G]ever before"
+      },
+      {
+        "text": "I need you [Em]Lord, I [A]need you [D]Lord"
       },
       {
         "text": ""
       },
       {
-        "text": "[G]More than the air I breathe... more than the"
+        "text": "Chorus"
       },
       {
-        "text": "[A]Song I sing... [Bm]more than the next [G]heartbeat,"
+        "text": "More than the [G]air I breathe... more than the"
       },
       {
-        "text": "[Em]More than [D]anything"
+        "text": "[A]Song I [Bm]sing... more than the [G]next heartbeat,"
       },
       {
-        "text": "[G]And Lord as time goes by... [A]I'll be by your [Bm]side,"
+        "text": "[Em]More than any[D]thing"
       },
       {
-        "text": "[Em]Cause I never want to [D]go back to my [Asus]old [A]life"
+        "text": "And Lord as [G]time goes by... I'll be [A]by your [Bm]side,"
+      },
+      {
+        "text": "Cause I [Em]never want to [D]go back to [Asus]my old [A]life"
       },
       {
         "text": ""
@@ -1660,13 +1666,13 @@
         "text": "[Bm7]Right here in your [F#m7]presence is where [G]I"
       },
       {
-        "text": "[Bm7]Belong... this old broken [F#m7]heart has finally"
+        "text": "[Bm7]Belong... [Bm7]this old broken [F#m7]heart has finally"
       },
       {
         "text": "[G]Found a home  (repeat as needed)"
       },
       {
-        "text": "[Asus]And I'll never be [A]alone."
+        "text": "And I'll [Asus]never be [A]alone"
       }
     ]
   },
