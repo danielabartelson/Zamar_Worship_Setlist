@@ -3707,19 +3707,16 @@
     "tempo": "slow",
     "lines": [
       {
-        "text": "[G]Thank [D/F#]you [Em]Lord[D]"
+        "text": "Verse"
       },
       {
-        "text": "[C]I just want to [G]thank you"
+        "text": "[G]Thank [D/F#]you [Em]Lord[D] , [C]I just want to [G]thank you"
       },
       {
         "text": "[C]I just want to [Dsus]thank [D]you"
       },
       {
-        "text": "[G]Thank [D/F#]you [Em]Lord[D]"
-      },
-      {
-        "text": "[C]I just want to [G]thank you"
+        "text": "[G]Thank [D/F#]you [Em]Lord[D] , [C]I just want to [G]thank you"
       },
       {
         "text": "[C]I just want to [Dsus]thank [D]You [G]Lord"
@@ -3728,28 +3725,25 @@
         "text": ""
       },
       {
-        "text": "[G]I just [D/F#]want"
+        "text": "Chorus"
       },
       {
-        "text": "[Em]To take a [D]little time right now"
+        "text": "[G]I just [D/F#]want [Em]To take a little [D]time right now"
       },
       {
-        "text": "[C]To say [G]thank you Lord"
+        "text": "To say [C]thank you Lord[G]"
       },
       {
-        "text": "[Am]For all you've [C]done for me"
+        "text": "For [Am]all you've [G]done for [C]me"
       },
       {
-        "text": "[G]I just [D/F#]want"
+        "text": "[G]I just [D/F#]want [Em]To take a little [D]time right now"
       },
       {
-        "text": "[Em]To take a [D]little time right now"
+        "text": "To say [C]thank you [G]Lord"
       },
       {
-        "text": "[C]To say [G]thank you Lord"
-      },
-      {
-        "text": "[C]For all you've [D]done for [G]me"
+        "text": "For [C]all you've [D]done for [G]me"
       }
     ]
   },
