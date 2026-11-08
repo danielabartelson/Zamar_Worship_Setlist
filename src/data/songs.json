@@ -1210,6 +1210,9 @@
         "text": ""
       },
       {
+        "text": "Verse"
+      },
+      {
         "text": "[E]My Saviour, [Esus]Redeemer, [E]Lifted me from the [Esus]miry clay"
       },
       {
@@ -1219,55 +1222,49 @@
         "text": ""
       },
       {
-        "text": "[C#m]Cause You came near, from the [A]everlasting,"
+        "text": "PreChorus"
       },
       {
-        "text": "[E]To the world we live, the [B]Father's only Son"
+        "text": "Cause You came [C#m]near, from the [A]everlasting,"
       },
       {
-        "text": ""
-      },
-      {
-        "text": "[E]You lived, and You died, [B]You rose again on [C#m]high[B]"
-      },
-      {
-        "text": "[E]You've opened the way, [B]for the world to live again,[C#m][B]"
-      },
-      {
-        "text": "[A]Hallelujah, [B]for all [E]You've done"
+        "text": "To the world we [E]live, the Father's only [B]Son"
       },
       {
         "text": ""
       },
       {
-        "text": "(Bridge, music pulls back)"
+        "text": "Chorus"
       },
       {
-        "text": "[C#m]Cause You came near, from the [A]everlasting,"
+        "text": "You [E]lived, and You [B]died, You [C#m]rose again on [B]high"
       },
       {
-        "text": "[E]To the world we live, the [B]Father's only Son (2x)"
+        "text": "You've [E]opened the [B]way, for the [C#m]world to live [B]again,"
       },
       {
-        "text": ""
-      },
-      {
-        "text": "(Chorus, no drums / ringing chords to build)"
-      },
-      {
-        "text": "You lived, and You died, You rose again on high"
-      },
-      {
-        "text": "You've opened the way, for the world to live again,"
-      },
-      {
-        "text": "Hallelujah, for all You've done"
+        "text": "Halle[A]lujah, [B]for all You've [E]done"
       },
       {
         "text": ""
       },
       {
-        "text": "[C#m]Hallelujah, [B]For all [A]You've [B]done"
+        "text": "Bridge"
+      },
+      {
+        "text": "Cause You came [C#m]near, from the ever[A]lasting,"
+      },
+      {
+        "text": "[E]To the world we [E]live, the Father's only [B]Son (2x)"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "Outro "
+      },
+      {
+        "text": "[C#m]Hallelu[B]jah, For all [A]You've [B]done"
       }
     ]
   },
@@ -2957,7 +2954,7 @@
     "id": "one-drop-of-blood",
     "title": "One Drop Of Blood",
     "key": "G",
-    "tempo": "fast",
+    "tempo": "slow",
     "lines": [
       {
         "text": "[G]I wasn't [D]there when the [C]nails"
@@ -3369,7 +3366,7 @@
     "id": "sacrifice-of-praise",
     "title": "Sacrifice Of Praise",
     "key": "Bb",
-    "tempo": "fast",
+    "tempo": "slow",
     "lines": [
       {
         "text": "[F][Eb][Bb]Halle-lu-jah, [F]Praises to your [Bb]name [F]Holy Holy let every [Gm]tongue [C]proclaim"
@@ -3848,7 +3845,7 @@
     "id": "unchanging",
     "title": "Unchanging",
     "key": "G",
-    "tempo": "slow",
+    "tempo": "fast",
     "lines": [
       {
         "text": "[G]Great is our faithfulness"
@@ -4505,7 +4502,7 @@
     "id": "your-love-oh-lord",
     "title": "Your Love Oh Lord",
     "key": "F",
-    "tempo": "slow",
+    "tempo": "fast",
     "lines": [
       {
         "text": "[F]Your love oh [Bb]Lord, [F]reaches to the [C/E]heavens"
@@ -6262,13 +6259,13 @@
         "text": "Chorus"
       },
       {
-        "text": "The darkest [D]night, You can [E]light it [F#m]up,"
+        "text": "The darkest [D]night, You can [E/G#]light it [F#m]up,"
       },
       {
         "text": "You can [E/G#]light it [A]up, oh God of [E]revival"
       },
       {
-        "text": "Let [A/C#]hope [D]arise, Death is [E]over - [F#m]come, You've [E/G#]already [A]won, oh God of [E]revival"
+        "text": "Let [A/C#]hope [D]arise, Death is [E]over - [F#m]come, You've already won, oh God of [E]revival"
       },
       {
         "text": ""
