@@ -678,19 +678,25 @@
     "tempo": "slow",
     "lines": [
       {
-        "text": "[Em]Intro: [C] [G] [D/F#]"
+        "text": "[Em] [C] [G] [D/F#]"
       },
       {
         "text": ""
       },
       {
-        "text": "[Em7]Christ is my reward, [C]And all my devotion [G]Now there's nothing in this world [D/F#]That could ever satisfy"
+        "text": "Verse"
       },
       {
-        "text": "[Em7]Through every trial [C]My soul will sing [D]No turning back [Em7]I've been set free"
+        "text": "[Em7]Christ is my [C]reward, And all my [G]devo[D/F#]tion Now there's [Em7]nothing in this [C]world That could ever satis[G]fy [D/F#]"
+      },
+      {
+        "text": "Through [C]every trial My soul will [Em7]sing No turning [C]back I've [Em7]been set [D]free"
       },
       {
         "text": ""
+      },
+      {
+        "text": "Chorus"
       },
       {
         "text": "[G]Christ is enough for me [Em7]Christ is enough for me [D]Everything I need is in You, [C]Everything I need"
@@ -699,19 +705,25 @@
         "text": ""
       },
       {
-        "text": "[Em7]Christ my all in all [C]my joy and my salvation [G]And His hope will never fail [D/F#]Heaven is our home"
+        "text": "Verse"
       },
       {
-        "text": "[Em7]Through every storm my soul will sing [C]Jesus is here [Em-D]To God be the glory"
+        "text": "[Em7]Christ my [C]all in all my joy and my sal[G]va[D/F#]tion And His [Em7]hope will never [G]fail Heaven is our [G]home [D/F#]"
+      },
+      {
+        "text": "Through every [C]storm my [D]soul will [Em7]sing Jesus is [C]here To God be the [Em]glo[D]ry"
       },
       {
         "text": ""
       },
       {
-        "text": "[G]I have decided to follow Jesus, [D/G]No turning back, [C]No [Em7]turning back [D](2x)"
+        "text": "Bridge"
       },
       {
-        "text": "[Em7]The cross before me, [C]the world behind me, [D]No turning back, [Em7]No [C]turning back [D](2x)"
+        "text": "I have [G]decided to follow [D/G G]Jesus, No turning [C]back, No [Em7]turning [D]back (2x)"
+      },
+      {
+        "text": "The cross [Em7]before [C]me, the world be[D]hind [Em7]me, No turning [C]back, No [Em7]turning [D]back (2x)"
       }
     ]
   },
