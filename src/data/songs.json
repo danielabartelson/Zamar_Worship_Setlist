@@ -268,25 +268,31 @@
     "tempo": "slow",
     "lines": [
       {
-        "text": "[E]Amazing grace, how [C#m]sweet the [A]sound [B]"
+        "text": "Verse"
       },
       {
-        "text": "[E]Amazing love, now [C#m]pouring [A]down [B]"
+        "text": "[E]Amazing [C#m]grace, how [A]sweet the [B]sound"
       },
       {
-        "text": "[A]From hands and feet that were [B]nailed [E]"
+        "text": "[E]Amazing [C#m]love, now [A]pouring [B]down"
       },
       {
-        "text": "[B]to the [C#m]tree"
+        "text": "From [A]hands and [B]feet that were [E]nailed [B]to the [C#m]tree"
       },
       {
-        "text": "[A]As grace flows down it [B]covers me [E]"
+        "text": "As [A]grace flows [B]down it covers [E]me"
       },
       {
-        "text": "[A-B]It covers me, [A-B]it covers me,"
+        "text": ""
       },
       {
-        "text": "[A-B]It covers me, [E-C#m-A-B]it covers me,"
+        "text": "Chorus"
+      },
+      {
+        "text": "It covers [A-B]me, it covers [A-B]me,"
+      },
+      {
+        "text": "It covers [A-B]me, it covers [E-C#m-A-B]me,"
       }
     ]
   },
