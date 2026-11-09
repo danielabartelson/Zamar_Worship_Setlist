@@ -5506,16 +5506,16 @@
     "tempo": "slow",
     "lines": [
       {
-        "text": "[G]I saw the [D]Lord, seated [Am]on the throne[C]"
+        "text": "[G]I saw the [D]Lord, [Am]seated on the [C]throne"
       },
       {
-        "text": "[G]And the [D]train of His [Am]robe filled the temple[C]"
+        "text": "[G]And the [D]train of His [Am]robe filled the [C]temple"
       },
       {
-        "text": "[G]And [D]angels sang [Am]all around [C]me"
+        "text": "[G]And [D]angels sang all [Am]around [C]me"
       },
       {
-        "text": "[G]And the song they [D]sang [Am]was so [C]simple"
+        "text": "And the [G]song they [D]sang was [Am]so [C]simple"
       },
       {
         "text": ""
@@ -5536,7 +5536,7 @@
         "text": "[G]Holy, [D]holy is the [C]Lamb"
       },
       {
-        "text": "[G]Holy, [D]holy is the Lamb [C]of God"
+        "text": "[G]Holy, [D]holy is the Lamb of [C]God"
       },
       {
         "text": ""
@@ -5551,7 +5551,7 @@
         "text": "[G]Worthy, [D]worthy is the [C]Lamb"
       },
       {
-        "text": "[G]Worthy, [D]worthy is the Lamb [C]of God"
+        "text": "[G]Worthy, [D]worthy is the Lamb of [C]God"
       }
     ]
   },
