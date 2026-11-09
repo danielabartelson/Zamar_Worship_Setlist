@@ -699,7 +699,7 @@
         "text": "Chorus"
       },
       {
-        "text": "[G]Christ is enough for me [Em7]Christ is enough [D]for me [C] Everything I [D]need is [Em7]in You, [C]Everything I [D]need"
+        "text": "[G]Christ is enough for me [Em7]Christ is enough for [D]me [C] Everything I [D]need is [Em7]in You, [C]Everything I [D]need"
       },
       {
         "text": ""
@@ -708,7 +708,10 @@
         "text": "Verse"
       },
       {
-        "text": "[Em7]Christ my [C]all in all my joy and my sal[G]va[D/F#]tion And His [Em7]hope will never [G]fail Heaven is our [G]home [D/F#]"
+        "text": "[Em7]Christ my [C]all in all my joy and my sal[G]va[D/F#]tion"
+      },
+      {
+        "text": "And His [Em7]hope will never [C]fail Heaven is our [G]home [D/F#]"
       },
       {
         "text": "Through every [C]storm my [D]soul will [Em7]sing Jesus is [C]here To God be the [Em]glo[D]ry"
