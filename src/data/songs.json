@@ -3343,28 +3343,31 @@
     "tempo": "fast",
     "lines": [
       {
-        "text": "Intro: [G] [Gsus]"
+        "text": "[G] [Gsus]"
+      },
+      {
+        "text": "Verse"
+      },
+      {
+        "text": "[G]There is no [Gsus]rock, [G]There is no [Gsus]god like [G]our [Gsus]God [G] [Gsus]"
+      },
+      {
+        "text": "[C]No other [Csus]name, [C]worthy of [Csus]]all our [G]praise [Gsus] [G] []Gsus"
+      },
+      {
+        "text": "The [D]Rock of [Dsus]salvation that [D]cannot be [Dsus]moved"
+      },
+      {
+        "text": "He's [Em]proven Himself to be [C]faithful and true"
+      },
+      {
+        "text": "[Asus]There is no rock, [C]there is no god like [G]ours [Gsus] [G] [Gsus]"
       },
       {
         "text": ""
       },
       {
-        "text": "[G]There is no [Gsus]rock, [G]There is no [Gsus]god [G]like our [Gsus]God [G] [Gsus]"
-      },
-      {
-        "text": "[C]No [Csus]other [C]name, [Csus]worthy [G]of [Gsus]all [G]our [Gsus]praise"
-      },
-      {
-        "text": "[D]The Rock [Dsus]of salvation [D]that cannot [Dsus]be moved"
-      },
-      {
-        "text": "[Em]He's proven Himself to [C]be faithful and true"
-      },
-      {
-        "text": "[Asus]There is no rock, there is no [C]god like [G]ours [Gsus] [G] [Gsus]"
-      },
-      {
-        "text": ""
+        "text": "Chorus"
       },
       {
         "text": "Rock of [Em]a - [C]ges, [G]Jesus is the [D]Rock"
@@ -3376,7 +3379,7 @@
         "text": "Rock of [Em]a - [C]ges, [G]Jesus is the [D]Rock"
       },
       {
-        "text": "[F5]There is no rock, there is no [C]god like [G]ours [Gsus] [G] [Gsus]"
+        "text": "[F5]There is no rock, [C]there is no god like [G]ours [Gsus] [G] [Gsus]"
       }
     ]
   },
@@ -6460,7 +6463,7 @@
   },
   {
     "id": "worthy-of-the-lamb",
-    "title": "",
+    "title": "Worthy of the Lamb",
     "tempo": "slow",
     "lines": [
       {
