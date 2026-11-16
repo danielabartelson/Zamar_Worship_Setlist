@@ -6,52 +6,55 @@
     "tempo": "slow",
     "lines": [
       {
-        "text": "[G]Above all [C]powers, above all [D]kings"
+        "text": "Verse"
       },
       {
-        "text": "[C]Above all [D]nations and all created [G]things"
+        "text": "[G]Above all [C]powers, above all [G]kings"
       },
       {
-        "text": "[Em]Above all [D]wisdom, and all the [C]ways of [G/B]man"
+        "text": "Above all [C]nations and [D]all created [G]things"
       },
       {
-        "text": "[Am]You were here before the world began [Dsus][D]"
+        "text": "Above all [Em]wisdom, and [D]all the ways of [C]man [G/B]"
       },
       {
-        "text": ""
-      },
-      {
-        "text": "[C]Above all [D]kingdoms, above all [G]thrones [G/B]"
-      },
-      {
-        "text": "[C]Above all [D]wonders the world has ever [G]known"
-      },
-      {
-        "text": "[Em]Above all [D]wealth and treasures of the [C]earth [G/B]"
-      },
-      {
-        "text": "[Am]There's no way to measure what you're worth [B7]"
+        "text": "[Am]You were here before the world [Dsus]began [D]"
       },
       {
         "text": ""
       },
       {
-        "text": "[G]Crucified [C]laid behind a [D]stone [G]"
+        "text": "Verse"
       },
       {
-        "text": "[G]You lived to [C]die rejected and [D]alone [G]"
+        "text": "Above all [C]kingdoms, [D]above all [G]thrones [G/B]"
       },
       {
-        "text": "[Em]Like a rose [D]trampled on the on the [C]ground [G/B]"
+        "text": "Above all [C]wonders the [D]world has ever [G]known"
       },
       {
-        "text": "[Am]You took the [G/B]fall, [C]and thought of [D]me above all [G]"
+        "text": "Above all [Em]wealth and [D]treasures of the [C]earth [G/B]"
+      },
+      {
+        "text": "[Am]There's no way to measure what you're [B7]worth"
       },
       {
         "text": ""
       },
       {
-        "text": "You took the fall, and thought of me above all"
+        "text": "Chorus"
+      },
+      {
+        "text": "[G]Cruci[C]fied [D]laid behind a [G]stone"
+      },
+      {
+        "text": "You [G]lived to [C]die [D]rejected and [G]alone"
+      },
+      {
+        "text": "Like a [Em]rose [D]trampled on the on the [C]ground [G/B]"
+      },
+      {
+        "text": "You took the [Am]fall, [G/B] and thought of [C]me [D]above [G]all"
       }
     ]
   },
@@ -2760,16 +2763,16 @@
     "tempo": "slow",
     "lines": [
       {
-        "text": "[Bb]Your Blood, speaks a better [Gm7]word, than all the empty"
+        "text": "[Bb]Your Blood, speaks a better word, than all the [Gm7]empty"
       },
       {
         "text": "[Bb]Claims, I've heard upon this [Gm7]Earth"
       },
       {
-        "text": "Speaks Righteousness for [F]me, and stands in my [Eb]defense"
+        "text": "[F]Speaks Righteousness for me, and [Eb]stands in my defense"
       },
       {
-        "text": "Jesus it's your [Bb]Blood [Gm7-F]"
+        "text": "[Bb]Jesus it's your [Gm7-F]Blood (2x's)"
       },
       {
         "text": ""
@@ -2781,7 +2784,7 @@
         "text": "[Gm7]What can make us whole again?"
       },
       {
-        "text": "[F]Nothing but the blood, [Eb]Nothing but the blood of [Bb]Jesus [Gm7/F]"
+        "text": "[F]Nothing but the blood, [Eb]Nothing but the blood of Jesus [Bb] [Gm7/F]."
       },
       {
         "text": "[Bb]What can wash us pure as snow?"
@@ -2790,22 +2793,22 @@
         "text": "[Gm7]Welcomed as the friends of God?"
       },
       {
-        "text": "[F]Nothing but the blood, [Eb]Nothing but the blood of [Bb]Jesus [Gm7/F]"
+        "text": "[F]Nothing but the blood, [Eb]Nothing but the blood of Jesus [Bb] [Gm7/F]."
       },
       {
         "text": ""
       },
       {
-        "text": "Your [Bb]Blood, testifies of [Gm7]grace, tells of the father's [Bb]heart"
+        "text": "[Bb]Your Blood, testifies of grace, tells of the [Gm7]father's heart [Bb]"
       },
       {
-        "text": "To make a way for [Gm7]us"
+        "text": "[Gm7]To make a way for us"
       },
       {
-        "text": "Now boldly we [F]approach, no earthly [Eb]confidence"
+        "text": "[F]Now boldly we approach, no earthly [Eb]confidence"
       },
       {
-        "text": "It's only by your [Bb]Blood [Gm-F]"
+        "text": "[Bb]It's only by your [Gm7-F]Blood."
       }
     ]
   },
@@ -4944,52 +4947,46 @@
     "tempo": "fast",
     "lines": [
       {
-        "text": "Verse"
+        "text": "[G]God is greater than my problems, [Em7]and greater than my fears"
       },
       {
-        "text": "God is [G]greater than my problems, and [Em7]greater than my fears"
-      },
-      {
-        "text": "He is [Am7]greater than my failings, and [Dsus]faithful through the [D]years"
-      },
-      {
-        "text": "God is [G]greater than the enemy, and [Em7]every human plan"
-      },
-      {
-        "text": "[Am7]Every word of [C]God will always [D]stand"
+        "text": "[Am7]He is greater than my failings, [Dsus]and faithful [D]through the years"
       },
       {
         "text": ""
       },
       {
-        "text": "PreChorus"
+        "text": "[G]God is greater than the enemy, [Em7]and every human plan"
       },
       {
-        "text": "[Em7]God of glory, [Am7]King of [C]Majes[D]ty!"
+        "text": "[Am7]Every word of [C]God will [D]always stand"
       },
       {
         "text": ""
       },
       {
-        "text": "Chorus"
+        "text": "[Em7]God of glory, [Am7]King [C]of [D]Majesty!"
+      },
+      {
+        "text": ""
       },
       {
         "text": "[G]God is greater - [Em7]Lord, Creator"
       },
       {
-        "text": "[Am7]God of wonders [C]high above all [D]things"
+        "text": "[Am7]God of wonders [C]high above [D]all things"
       },
       {
         "text": "[G]God is greater - [Em7]Lord, Creator"
       },
       {
-        "text": "[C]God of wonders [G]high above all [D]things"
+        "text": "[C]God of wonders [G]high above [D]all things"
       },
       {
         "text": ""
       },
       {
-        "text": "He's the King of [G]Kings!"
+        "text": "[G]He's the King of Kings!"
       }
     ]
   },
@@ -6435,6 +6432,117 @@
     "lines": [
       {
         "text": ""
+      }
+    ]
+  },
+  {
+    "id": "alive-alive",
+    "title": "Alive, Alive",
+    "tempo": "fast",
+    "lines": [
+      {
+        "text": "Verse"
+      },
+      {
+        "text": "[F]Alive Alive, [Bb]Alive forever[F]more,"
+      },
+      {
+        "text": "My Jesus is [C7]Alive, Alive [F]forevermore"
+      },
+      {
+        "text": "Alive [Bb]Alive, Alive forever[F]more"
+      },
+      {
+        "text": "My [C7]Jesus is Alive forever[F]more"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "Sing Halle[Bb]lujah, Sing Halle[F]lujah "
+      },
+      {
+        "text": "My [C7]Jesus is Alive forever[F]more"
+      },
+      {
+        "text": "Sing Halle[Bb]lujah, [F]oh Halle[Dm]lujah "
+      },
+      {
+        "text": "My [G7]Jesus [C7]is [F]alive"
+      }
+    ]
+  },
+  {
+    "id": "alive-alive-2",
+    "title": "Alive, Alive",
+    "tempo": "fast",
+    "lines": [
+      {
+        "text": "Verse"
+      },
+      {
+        "text": "[F]Alive Alive, [Bb]Alive forever[F]more,"
+      },
+      {
+        "text": "My [C7]Jesus is Alive, [F]Alive forevermore"
+      },
+      {
+        "text": "Alive [Bb]Alive, Alive forever[F]more"
+      },
+      {
+        "text": "My [C7]Jesus is Alive forever[F]more"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "Sing Halle[Bb]lujah, Sing Halle[F]lujah "
+      },
+      {
+        "text": "My [C7]Jesus is Alive forever[F]more"
+      },
+      {
+        "text": "Sing Halle[Bb]lujah, [F]oh Halle[Dm]lujah "
+      },
+      {
+        "text": "My [G7]Jesus [C7]is [F]alive"
+      }
+    ]
+  },
+  {
+    "id": "alive-alive-3",
+    "title": "Alive, Alive",
+    "tempo": "fast",
+    "lines": [
+      {
+        "text": "Verse"
+      },
+      {
+        "text": "[F]Alive Alive, [Bb]Alive forever[F]more,"
+      },
+      {
+        "text": "My [C7]Jesus is Alive, [F]Alive forevermore"
+      },
+      {
+        "text": "Alive [Bb]Alive, Alive forever[F]more"
+      },
+      {
+        "text": "My [C7]Jesus is Alive forever[F]more"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "Sing Halle[Bb]lujah, Sing Halle[F]lujah "
+      },
+      {
+        "text": "My [C7]Jesus is Alive forever[F]more"
+      },
+      {
+        "text": "Sing Halle[Bb]lujah, [F]oh Halle[Dm]lujah "
+      },
+      {
+        "text": "My [G7]Jesus [C7]is [F]alive"
       }
     ]
   }
