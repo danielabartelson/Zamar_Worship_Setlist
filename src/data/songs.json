@@ -268,31 +268,25 @@
     "tempo": "slow",
     "lines": [
       {
-        "text": "Verse"
+        "text": "[E]Amazing grace, how [C#m]sweet the [A]sound [B]"
       },
       {
-        "text": "[E]Amazing [C#m]grace, how [A]sweet the [B]sound"
+        "text": "[E]Amazing love, now [C#m]pouring [A]down [B]"
       },
       {
-        "text": "[E]Amazing [C#m]love, now [A]pouring [B]down"
+        "text": "[A]From hands and feet that were [B]nailed [E]"
       },
       {
-        "text": "From [A]hands and [B]feet that were [E]nailed [B]to the [C#m]tree"
+        "text": "[B]to the [C#m]tree"
       },
       {
-        "text": "As [A]grace flows [B]down it covers [E]me"
+        "text": "[A]As grace flows down it [B]covers me [E]"
       },
       {
-        "text": ""
+        "text": "[A-B]It covers me, [A-B]it covers me,"
       },
       {
-        "text": "Chorus"
-      },
-      {
-        "text": "It covers [A-B]me, it covers [A-B]me,"
-      },
-      {
-        "text": "It covers [A-B]me, it covers [E-C#m-A-B]me,"
+        "text": "[A-B]It covers me, [E-C#m-A-B]it covers me,"
       }
     ]
   },
@@ -684,55 +678,40 @@
     "tempo": "slow",
     "lines": [
       {
-        "text": "[Em] [C] [G] [D/F#]"
+        "text": "[Em]Intro: [C] [G] [D/F#]"
       },
       {
         "text": ""
       },
       {
-        "text": "Verse"
+        "text": "[Em7]Christ is my reward, [C]And all my devotion [G]Now there's nothing in this world [D/F#]That could ever satisfy"
       },
       {
-        "text": "[Em7]Christ is my [C]reward, And all my [G]devo[D/F#]tion Now there's [Em7]nothing in this [C]world That could ever satis[G]fy [D/F#]"
-      },
-      {
-        "text": "Through every [C]trial My [D]soul will [Em7]sing No turning [C]back I've [Em7]been set [D]free"
+        "text": "[Em7]Through every trial [C]My soul will sing [D]No turning back [Em7]I've been set free"
       },
       {
         "text": ""
       },
       {
-        "text": "Chorus"
-      },
-      {
-        "text": "[G]Christ is enough for me [Em7]Christ is enough for [D]me [C] Everything I [D]need is [Em7]in You, [C]Everything I [D]need"
+        "text": "[G]Christ is enough for me [Em7]Christ is enough for me [D]Everything I need is in You, [C]Everything I need"
       },
       {
         "text": ""
       },
       {
-        "text": "Verse"
+        "text": "[Em7]Christ my all in all [C]my joy and my salvation [G]And His hope will never fail [D/F#]Heaven is our home"
       },
       {
-        "text": "[Em7]Christ my [C]all in all my joy and my sal[G]va[D/F#]tion"
-      },
-      {
-        "text": "And His [Em7]hope will never [C]fail Heaven is our [G]home [D/F#]"
-      },
-      {
-        "text": "Through every [C]storm my [D]soul will [Em7]sing Jesus is [C]here To God be the [Em]glo[D]ry"
+        "text": "[Em7]Through every storm my soul will sing [C]Jesus is here [Em-D]To God be the glory"
       },
       {
         "text": ""
       },
       {
-        "text": "Bridge"
+        "text": "[G]I have decided to follow Jesus, [D/G]No turning back, [C]No [Em7]turning back [D](2x)"
       },
       {
-        "text": "I have [G]decided to follow [D/G G]Jesus, No turning [C]back, No [Em7]turning [D]back (2x)"
-      },
-      {
-        "text": "The cross [Em7]before [C]me, the world be[D]hind [Em7]me, No turning [C]back, No [Em7]turning [D]back (2x)"
+        "text": "[Em7]The cross before me, [C]the world behind me, [D]No turning back, [Em7]No [C]turning back [D](2x)"
       }
     ]
   },
@@ -778,70 +757,88 @@
         "text": ""
       },
       {
-        "text": "Verse"
+        "text": "[F]You moved the mountains, [Bb]told the wind and waves be still, You cast out demons"
       },
       {
-        "text": "[F]You moved the mountains, [Bb]told the wind and waves be [F]still, You cast out demons [Bb]"
+        "text": "[Dm]Bid the empty soul be filled and now there's breakthrough. [Bb]Now there's freedom in Your name,"
       },
       {
-        "text": "Bid the empty soul be [Dm]filled and now there's breakthrough. [Bb]Now there's freedom in Your [Dm]name,"
+        "text": "[Bb]You gave us power [F]and the keys to do the same"
       },
       {
-        "text": "[Bb]You gave us power [Bb] and the keys to do the [F]same"
+        "text": "[Bb]You hold redemption, [F]made accusers drop their stones, showed us mercy,"
       },
       {
-        "text": "You hold redemption,[Bb] made accusers drop their [F]stones, showed us mercy, [Bb]"
+        "text": "[Dm]With your mighty miracles, and now there's breakthrough. [Bb]Now there's freedom in Your name,"
       },
       {
-        "text": "With your mighty [Dm]miracles, and now there's breakthrough. [Bb] Now there's freedom in Your [Dm]name,"
-      },
-      {
-        "text": "You gave us power [Bb] and the keys to do the [Bb2]same"
+        "text": "[Bb]You gave us power [Bb2]and the keys to do the same"
       },
       {
         "text": ""
       },
       {
-        "text": "Chorus"
+        "text": "[F]Now we proclaim (in Jesus name), [Bb]walls fall down (in Jesus name)"
       },
       {
-        "text": "Now we [F]proclaim (in Jesus name), walls fall [Bb]down (in Jesus name)"
+        "text": "[Dm]Strongholds break (in Jesus name), [Bb2]A-men"
       },
       {
-        "text": "Strongholds [Dm]break (in Jesus name), [Bb2]A-men"
+        "text": "[F]We are healed (in Jesus name), [Bb]there are miracles (in Jesus name)"
       },
       {
-        "text": "We are [F]healed (in Jesus name), there are [Bb]miracles (in Jesus name)"
-      },
-      {
-        "text": "Pour them [Dm]out (in Jesus name), [Bb2]A-men (End resolve F)"
+        "text": "[Dm]Pour them out (in Jesus name), [Bb2]A-men (End resolve F)"
       },
       {
         "text": ""
       },
       {
-        "text": "Verse"
+        "text": "[F]You crushed the darkness, [Bb]made a fool of death and grave, oh King Jesus"
       },
       {
-        "text": "[F]You crushed the darkness, [Bb] made a fool of death and [F]grave, oh King Jesus [Bb]"
+        "text": "[Dm]You make royals out of slaves, and now there's breakthrough [Bb]"
       },
       {
-        "text": "You make royals out of [Dm]slaves, and now there's breakthrough[Bb]"
-      },
-      {
-        "text": "Now there's freedom in Your [Dm]name, You gave us power, [Bb2] and the keys to do the [Bb2]same"
+        "text": "[Dm]Now there's freedom in Your name, [Bb]You gave us power, [Bb2]and the keys to do the same"
       },
       {
         "text": ""
       },
       {
-        "text": "Bridge"
+        "text": "[F]Now we proclaim (in Jesus name), [Bb]walls fall down (in Jesus name)"
+      },
+      {
+        "text": "[Dm]Strongholds break (in Jesus name), [Bb2]A-men"
+      },
+      {
+        "text": "[F]We are healed (in Jesus name), [Bb]there are miracles (in Jesus name)"
+      },
+      {
+        "text": "[Dm]Pour them out (in Jesus name), [Bb2]A-men"
+      },
+      {
+        "text": ""
       },
       {
         "text": "[F]Ohhh, [Bb]Ohhh, [Dm7]God we echo Your [Bb]authority"
       },
       {
         "text": "[F]Ohhh, [Bb]Ohhh, [Dm7]God we echo Your [Bb]victory"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "[F]Now we proclaim (in Jesus name), [Bb]walls fall down (in Jesus name)"
+      },
+      {
+        "text": "[Dm]Strongholds break (in Jesus name), [Bb2]A-men"
+      },
+      {
+        "text": "[F]We are healed (in Jesus name), [Bb]there are miracles (in Jesus name)"
+      },
+      {
+        "text": "[Dm]Pour them out (in Jesus name), [Bb2]A-men"
       }
     ]
   },
@@ -1213,9 +1210,6 @@
         "text": ""
       },
       {
-        "text": "Verse"
-      },
-      {
         "text": "[E]My Saviour, [Esus]Redeemer, [E]Lifted me from the [Esus]miry clay"
       },
       {
@@ -1225,49 +1219,55 @@
         "text": ""
       },
       {
-        "text": "PreChorus"
+        "text": "[C#m]Cause You came near, from the [A]everlasting,"
       },
       {
-        "text": "Cause You came [C#m]near, from the [A]everlasting,"
-      },
-      {
-        "text": "To the world we [E]live, the Father's only [B]Son"
+        "text": "[E]To the world we live, the [B]Father's only Son"
       },
       {
         "text": ""
       },
       {
-        "text": "Chorus"
+        "text": "[E]You lived, and You died, [B]You rose again on [C#m]high[B]"
       },
       {
-        "text": "You [E]lived, and You [B]died, You [C#m]rose again on [B]high"
+        "text": "[E]You've opened the way, [B]for the world to live again,[C#m][B]"
       },
       {
-        "text": "You've [E]opened the [B]way, for the [C#m]world to live [B]again,"
-      },
-      {
-        "text": "Halle[A]lujah, [B]for all You've [E]done"
+        "text": "[A]Hallelujah, [B]for all [E]You've done"
       },
       {
         "text": ""
       },
       {
-        "text": "Bridge"
+        "text": "(Bridge, music pulls back)"
       },
       {
-        "text": "Cause You came [C#m]near, from the ever[A]lasting,"
+        "text": "[C#m]Cause You came near, from the [A]everlasting,"
       },
       {
-        "text": "[E]To the world we [E]live, the Father's only [B]Son (2x)"
+        "text": "[E]To the world we live, the [B]Father's only Son (2x)"
       },
       {
         "text": ""
       },
       {
-        "text": "Outro "
+        "text": "(Chorus, no drums / ringing chords to build)"
       },
       {
-        "text": "[C#m]Hallelu[B]jah, For all [A]You've [B]done"
+        "text": "You lived, and You died, You rose again on high"
+      },
+      {
+        "text": "You've opened the way, for the world to live again,"
+      },
+      {
+        "text": "Hallelujah, for all You've done"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "[C#m]Hallelujah, [B]For all [A]You've [B]done"
       }
     ]
   },
@@ -2115,67 +2115,79 @@
         "text": ""
       },
       {
-        "text": "Verse"
+        "text": "[G]Let the power of God fall down on us, [Em7]let Your [Cmaj7]power fall down right [G]now"
       },
       {
-        "text": "[G]Let the power of God fall down on us, let Your power fall down right now"
-      },
-      {
-        "text": "Let the [Em7]power of God fall [Cmaj7]down on us, let Your [G]power fall down right now"
-      },
-      {
-        "text": "[G]Let the spirit of God pour out on us, let Your spirit fall down right now"
-      },
-      {
-        "text": "Let the [Em7]Spirit of God pour out on us, [Em7]let Your [Cmaj7]Spirit pour [Cmaj7]out on us, let your [G]spirit pour out right now"
+        "text": "[G]Let the Spirit of God pour out on us, [Em7]let Your [Cmaj7]Spirit pour out right [G]now"
       },
       {
         "text": ""
       },
       {
-        "text": "PreChorus"
+        "text": "[Em]For Your [C]Glo - ry and You [G]on - ly, [D] [Em]What You [C]say is what we'll [G]do[D]"
       },
       {
-        "text": "For Your [Em]Glo - [C]ry and You [G]on - [D]ly, What You [Em]say is [C]what we'll [G]do[D]"
-      },
-      {
-        "text": "Let Your [Em]pass - [C]ion become [G]act - [D]ion, Holy [Em]Spirit [C]come [G]move"
+        "text": "[Em]Let Your [C]pass - ion become [G]act - ion, [D] [Em]Holy [C]Spirit come [G]move"
       },
       {
         "text": ""
       },
       {
-        "text": "Chorus"
+        "text": "[C]Jesus we're alive to [G]glorify Your Name, [D]Let Your Spirit rise [C]among us now as we [G]sing[D]"
       },
       {
-        "text": "Jesus we're [C]alive to glori[G]fy Your [D]Name, Let Your Spirit [C]rise among us [G]now as we [G]sing[D]"
-      },
-      {
-        "text": "Jesus [Em7]move, [C][G][D] Jesus [Em7]move[C][G][D]"
+        "text": "[Em7]Jesus move, [C][G][D] [Em7]Jesus move[C][G][D]"
       },
       {
         "text": ""
       },
       {
-        "text": "Verse"
+        "text": "[G]Let the love of God come alive in us, [Em7]let Your love come alive right [G]now"
       },
       {
-        "text": "[G]Let the love of God come alive in us, let Your love come alive right now"
-      },
-      {
-        "text": "Let the [Em7]love of God come [Cmaj7]alive in us, let Your [G]love come alive right now"
+        "text": "[G]Let the love of God come alive in us, [Em7]let Your [Cmaj7]love come alive right [G]now"
       },
       {
         "text": ""
       },
       {
-        "text": "Bridge"
+        "text": "[Em]For Your [C]Glo - ry and You [G]on - ly, [D] [Em]What You [C]say is what we'll [G]do[D]"
       },
       {
-        "text": "'Cause we don't want to [Em]leave [Am]until [G]we're [D]changed"
+        "text": "[Em]Let Your [C]pass - ion become [G]act - ion, [D] [Em]Holy [C]Spirit come [G]move"
       },
       {
-        "text": "So here in our [Em]hearts God [Am]have [G]Your [D]way"
+        "text": ""
+      },
+      {
+        "text": "[C]Jesus we're alive to [G]glorify Your Name, [D]Let Your Spirit rise [C]among us now as we [G]sing[D]"
+      },
+      {
+        "text": "[Em7]Jesus move, [C][G][D] [Em7]Jesus move[C][G][D]"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "[Em]'Cause we don't want to [Am]leave until we're [G]changed[D]"
+      },
+      {
+        "text": "[Em]So here in our hearts [Am]God have [G]Your way[D]"
+      },
+      {
+        "text": "[Em]'Cause we don't want to [Am]leave until we're [G]changed[D]"
+      },
+      {
+        "text": "[Em]So here in our hearts [Am]God have [G]Your way[D]"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "[C]Jesus we're alive to [G]glorify Your Name, [D]Let Your Spirit rise [C]among us now as we [G]sing[D]"
+      },
+      {
+        "text": "[Em7]Jesus move, [C][G][D] [Em7]Jesus move[C][G][D]"
       }
     ]
   },
@@ -2309,25 +2321,16 @@
         "text": ""
       },
       {
-        "text": "Verse"
-      },
-      {
         "text": "[Bm7]I Will Praise Your Name, [E]Oh Lord, [Bm7]I Will Sing About Your [E]Mercy"
       },
       {
-        "text": "[Bm7]You Deserve The Highest [E]Place, Be [Bm7]Exalted Here As [A/C#]We [D]Begin To [E]Praise!"
+        "text": "[Bm7]You Deserve The Highest Place, [E]Be Exalted [Bm7]Here As We [A/C#]Begin [D]To [E]Praise!"
       },
       {
-        "text": ""
+        "text": "[A]Lift Him Higher, [E]Let Our Praises Sing The [F#m]Wonder Of His [D]Love"
       },
       {
-        "text": "Chorus"
-      },
-      {
-        "text": "Lift Him [A]Higher, Let Our [E]Praises Sing The [F#m]Wonder Of His [D]Love"
-      },
-      {
-        "text": "Lift Him [A]Higher, For [E]He Deserve The [D]Glory!  (2x)"
+        "text": "[A]Lift Him Higher, [E]For He Deserve The [D]Glory!  (2x)"
       }
     ]
   },
@@ -2954,7 +2957,7 @@
     "id": "one-drop-of-blood",
     "title": "One Drop Of Blood",
     "key": "G",
-    "tempo": "slow",
+    "tempo": "fast",
     "lines": [
       {
         "text": "[G]I wasn't [D]there when the [C]nails"
@@ -3256,6 +3259,30 @@
       },
       {
         "text": "And [B]forever [C#]worship [F#]Christ, I'll [B]forever [C#]worship [F#]Christ[F#sus] [F#]"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "Chorus"
+      },
+      {
+        "text": "[Bmaj7]Not the same, I am changed, [F#]Redeemed by the [D#m]blood of the Lamb [C#]"
+      },
+      {
+        "text": "[Bmaj7]By His grace, I am saved, [F#]I'm His child, [D#m]forever, I am [C#]"
+      },
+      {
+        "text": "[Bmaj7]Not the same, I am changed, [F#]Redeemed by the [D#m]blood of the Lamb [C#]"
+      },
+      {
+        "text": "[Bmaj7]By His grace, I am saved, [F#]I'm His child, [D#m]forever, I am [C#]"
+      },
+      {
+        "text": "[B]Halle[C#]-lu[D#m]-jah, [B]Halle[C#]-lu[D#m]-jah, [B]Halle[C#]-lu[D#m]-jah,"
+      },
+      {
+        "text": "[C#sus] [C#] [F#]Redeemed by the blood of the Lamb"
       }
     ]
   },
@@ -3301,31 +3328,28 @@
     "tempo": "fast",
     "lines": [
       {
-        "text": "[G] [Gsus]"
-      },
-      {
-        "text": "Verse"
-      },
-      {
-        "text": "[G]There is no [Gsus]rock, [G]There is no [Gsus]god like [G]our [Gsus]God [G] [Gsus]"
-      },
-      {
-        "text": "[C]No other [Csus]name, [C]worthy of [Csus]all our [G]praise [Gsus] [G] [Gsus]"
-      },
-      {
-        "text": "The [D]Rock of [Dsus]salvation that [D]cannot be [Dsus]moved"
-      },
-      {
-        "text": "He's [Em]proven Himself to be [C]faithful and true"
-      },
-      {
-        "text": "[Asus]There is no rock, [C]there is no god like [G]ours [Gsus] [G] [Gsus]"
+        "text": "Intro: [G] [Gsus]"
       },
       {
         "text": ""
       },
       {
-        "text": "Chorus"
+        "text": "[G]There is no [Gsus]rock, [G]There is no [Gsus]god [G]like our [Gsus]God [G] [Gsus]"
+      },
+      {
+        "text": "[C]No [Csus]other [C]name, [Csus]worthy [G]of [Gsus]all [G]our [Gsus]praise"
+      },
+      {
+        "text": "[D]The Rock [Dsus]of salvation [D]that cannot [Dsus]be moved"
+      },
+      {
+        "text": "[Em]He's proven Himself to [C]be faithful and true"
+      },
+      {
+        "text": "[Asus]There is no rock, there is no [C]god like [G]ours [Gsus] [G] [Gsus]"
+      },
+      {
+        "text": ""
       },
       {
         "text": "Rock of [Em]a - [C]ges, [G]Jesus is the [D]Rock"
@@ -3337,7 +3361,7 @@
         "text": "Rock of [Em]a - [C]ges, [G]Jesus is the [D]Rock"
       },
       {
-        "text": "[F5]There is no rock, [C]there is no god like [G]ours [Gsus] [G] [Gsus]"
+        "text": "[F5]There is no rock, there is no [C]god like [G]ours [Gsus] [G] [Gsus]"
       }
     ]
   },
@@ -3345,7 +3369,7 @@
     "id": "sacrifice-of-praise",
     "title": "Sacrifice Of Praise",
     "key": "Bb",
-    "tempo": "slow",
+    "tempo": "fast",
     "lines": [
       {
         "text": "[F][Eb][Bb]Halle-lu-jah, [F]Praises to your [Bb]name [F]Holy Holy let every [Gm]tongue [C]proclaim"
@@ -3674,16 +3698,19 @@
     "tempo": "slow",
     "lines": [
       {
-        "text": "Verse"
+        "text": "[G]Thank [D/F#]you [Em]Lord[D]"
       },
       {
-        "text": "[G]Thank [D/F#]you [Em]Lord[D] , [C]I just want to [G]thank you"
+        "text": "[C]I just want to [G]thank you"
       },
       {
         "text": "[C]I just want to [Dsus]thank [D]you"
       },
       {
-        "text": "[G]Thank [D/F#]you [Em]Lord[D] , [C]I just want to [G]thank you"
+        "text": "[G]Thank [D/F#]you [Em]Lord[D]"
+      },
+      {
+        "text": "[C]I just want to [G]thank you"
       },
       {
         "text": "[C]I just want to [Dsus]thank [D]You [G]Lord"
@@ -3692,25 +3719,28 @@
         "text": ""
       },
       {
-        "text": "Chorus"
+        "text": "[G]I just [D/F#]want"
       },
       {
-        "text": "[G]I just [D/F#]want [Em]To take a little [D]time right now"
+        "text": "[Em]To take a [D]little time right now"
       },
       {
-        "text": "To say [C]thank you Lord[G]"
+        "text": "[C]To say [G]thank you Lord"
       },
       {
-        "text": "For [Am]all you've [G]done for [C]me"
+        "text": "[Am]For all you've [C]done for me"
       },
       {
-        "text": "[G]I just [D/F#]want [Em]To take a little [D]time right now"
+        "text": "[G]I just [D/F#]want"
       },
       {
-        "text": "To say [C]thank you [G]Lord"
+        "text": "[Em]To take a [D]little time right now"
       },
       {
-        "text": "For [C]all you've [D]done for [G]me"
+        "text": "[C]To say [G]thank you Lord"
+      },
+      {
+        "text": "[C]For all you've [D]done for [G]me"
       }
     ]
   },
@@ -3818,7 +3848,7 @@
     "id": "unchanging",
     "title": "Unchanging",
     "key": "G",
-    "tempo": "fast",
+    "tempo": "slow",
     "lines": [
       {
         "text": "[G]Great is our faithfulness"
@@ -4260,55 +4290,52 @@
     "tempo": "slow",
     "lines": [
       {
-        "text": "Verse"
+        "text": "[A2]All the saints and [Bsus]angels, They [A2]bow before [Bsus]Your throne"
       },
       {
-        "text": "[A2]All the saints and [Bsus]angels, They [A2]bow before Your [Bsus]throne"
-      },
-      {
-        "text": "[A2]All the elders [Bsus]cast their [E/G#]crowns, Before the [A]Lamb of [B]God and [E]sing"
+        "text": "[A2]All the elders cast their [Bsus]crowns, [E/G#]Before the [A]Lamb of [B]God and [E]sing"
       },
       {
         "text": ""
       },
       {
-        "text": "Chorus"
+        "text": "[E]You are worthy of it all, You are [Bsus]worthy of it [B]all"
       },
       {
-        "text": "You are worthy of it [E]all, You are worthy of it [Bsus-B]all"
-      },
-      {
-        "text": "For from You [E/G#]are all [A]things, And to You are all [B]things, You deserve the [Esus]glory[E]"
+        "text": "[E/G#]For from [A]You are all things, And to You are all [B]things, You deserve the [Esus]glory[E]"
       },
       {
         "text": ""
       },
       {
-        "text": "Verse"
+        "text": "[A2]All the saints and [Bsus]angels, They [A2]bow before [Bsus]Your throne"
       },
       {
-        "text": "[A2]All the saints and [Bsus]angels, They [A2]bow before Your [Bsus]throne"
-      },
-      {
-        "text": "[A2]All the elders [Bsus]cast their [E/G#]crowns, Before the [A]Lamb of [B]God and [E]sing"
+        "text": "[A2]All the elders cast their [Bsus]crowns, [E/G#]Before the [A]Lamb of [B]God and [E]sing"
       },
       {
         "text": ""
       },
       {
-        "text": "Bridge"
+        "text": "[E]Day and night, night and day, [G#m]Let incense arise"
       },
       {
-        "text": "[E]Day and night, night and day, Let [G#m]incense arise"
+        "text": "[C#m]Day and night, night and day, [A]Let incense arise"
       },
       {
-        "text": "[C#m]Day and night, night and day, Let [A]incense arise"
+        "text": "[E]Day and night, night and day, [B]Let incense arise"
       },
       {
-        "text": "[E]Day and night, night and day, Let [B]incense arise"
+        "text": "[F#m]Day and night, night and day, [A]Let incense arise"
       },
       {
-        "text": "[F#m]Day and night, night and day, Let [A]incense arise"
+        "text": ""
+      },
+      {
+        "text": "[E]I exalt Thee, [B]I exalt Thee, [A]I exalt Thee, [B]oh [E]Lord [A/B]"
+      },
+      {
+        "text": "[E]I exalt Thee, [B]I exalt Thee, [A]I exalt Thee, [B]oh [E]Lord"
       }
     ]
   },
@@ -4478,7 +4505,7 @@
     "id": "your-love-oh-lord",
     "title": "Your Love Oh Lord",
     "key": "F",
-    "tempo": "fast",
+    "tempo": "slow",
     "lines": [
       {
         "text": "[F]Your love oh [Bb]Lord, [F]reaches to the [C/E]heavens"
@@ -5464,16 +5491,16 @@
     "tempo": "slow",
     "lines": [
       {
-        "text": "[G]I saw the [D]Lord, [Am]seated on the [C]throne"
+        "text": "[G]I saw the [D]Lord, seated [Am]on the throne[C]"
       },
       {
-        "text": "[G]And the [D]train of His [Am]robe filled the [C]temple"
+        "text": "[G]And the [D]train of His [Am]robe filled the temple[C]"
       },
       {
-        "text": "[G]And [D]angels sang all [Am]around [C]me"
+        "text": "[G]And [D]angels sang [Am]all around [C]me"
       },
       {
-        "text": "And the [G]song they [D]sang was [Am]so [C]simple"
+        "text": "[G]And the song they [D]sang [Am]was so [C]simple"
       },
       {
         "text": ""
@@ -5494,7 +5521,7 @@
         "text": "[G]Holy, [D]holy is the [C]Lamb"
       },
       {
-        "text": "[G]Holy, [D]holy is the Lamb of [C]God"
+        "text": "[G]Holy, [D]holy is the Lamb [C]of God"
       },
       {
         "text": ""
@@ -5509,7 +5536,7 @@
         "text": "[G]Worthy, [D]worthy is the [C]Lamb"
       },
       {
-        "text": "[G]Worthy, [D]worthy is the Lamb of [C]God"
+        "text": "[G]Worthy, [D]worthy is the Lamb [C]of God"
       }
     ]
   },
@@ -6413,22 +6440,39 @@
     ]
   },
   {
-    "id": "breathe-on-me",
-    "title": "Breathe On Me",
-    "tempo": "slow",
+    "id": "alive-alive",
+    "title": "Alive, Alive",
+    "tempo": "fast",
     "lines": [
       {
-        "text": ""
-      }
-    ]
-  },
-  {
-    "id": "worthy-of-the-lamb",
-    "title": "Worthy of the Lamb",
-    "tempo": "slow",
-    "lines": [
+        "text": "Verse"
+      },
+      {
+        "text": "[F]Alive Alive, [Bb]Alive forever[F]more,"
+      },
+      {
+        "text": "My Jesus is [C7]Alive, Alive [F]forevermore"
+      },
+      {
+        "text": "Alive [Bb]Alive, Alive forever[F]more"
+      },
+      {
+        "text": "My [C7]Jesus is Alive forever[F]more"
+      },
       {
         "text": ""
+      },
+      {
+        "text": "Sing Halle[Bb]lujah, Sing Halle[F]lujah "
+      },
+      {
+        "text": "My [C7]Jesus is Alive forever[F]more"
+      },
+      {
+        "text": "Sing Halle[Bb]lujah, [F]oh Halle[Dm]lujah "
+      },
+      {
+        "text": "My [G7]Jesus [C7]is [F]alive"
       }
     ]
   }
