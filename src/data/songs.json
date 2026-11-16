@@ -6475,5 +6475,42 @@
         "text": "My [G7]Jesus [C7]is [F]alive"
       }
     ]
+  },
+  {
+    "id": "alive-alive-2",
+    "title": "Alive, Alive",
+    "tempo": "fast",
+    "lines": [
+      {
+        "text": "Verse"
+      },
+      {
+        "text": "[F]Alive Alive, [Bb]Alive forever[F]more,"
+      },
+      {
+        "text": "My [C7]Jesus is Alive, [F]Alive forevermore"
+      },
+      {
+        "text": "Alive [Bb]Alive, Alive forever[F]more"
+      },
+      {
+        "text": "My [C7]Jesus is Alive forever[F]more"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "Sing Halle[Bb]lujah, Sing Halle[F]lujah "
+      },
+      {
+        "text": "My [C7]Jesus is Alive forever[F]more"
+      },
+      {
+        "text": "Sing Halle[Bb]lujah, [F]oh Halle[Dm]lujah "
+      },
+      {
+        "text": "My [G7]Jesus [C7]is [F]alive"
+      }
+    ]
   }
 ]
